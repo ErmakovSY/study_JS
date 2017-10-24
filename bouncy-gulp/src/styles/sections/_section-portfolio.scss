@@ -1,0 +1,55 @@
+.portfolio {
+  min-height: 100vh;
+  background-color: $bg-section-lightGray;
+  &__tabs-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+  }
+  &__tab {
+    position: relative;
+    @include font("Open Sans", 16px, 400, $darkGray);
+    padding-bottom: 10px;
+    margin-right: 30px;
+    cursor: pointer;
+    &:last-of-type {
+      margin-right: 0;
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      bottom: 0px;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 2px;
+      width: 40px;
+      background-color: $cyan;
+      opacity: 0;
+      @include transition(0.3s);
+    }
+    &:hover:before {
+      opacity: 1;
+    }
+  }
+  &__tabs-block {
+    width: 100%;
+    background-color: $bg-section-lightGray;
+  }
+}
+.section {
+  &__title {
+    @include font("Source Sans Pro", 20px, 400, $darkGray);
+    line-height: 20px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0 auto 40px;
+  }
+  &__subtitle {
+    width: 60%;
+    @include font("Open Sans", 14px, 400, $lightGray);
+    line-height: 25px;
+    text-align: center;
+    margin: 0 auto 85px;
+  }
+}

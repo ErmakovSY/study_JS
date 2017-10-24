@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Game</title>
+	<link href="styles/font-awesome.css" rel="stylesheet">
+	<link href="styles/ionicons.css" rel="stylesheet">
+	<link href="styles/iconsfont.css" rel="stylesheet">
+	<link href="styles/main.css" rel="stylesheet">
+</head>
+<body>
+	<main class="main">
+		<section class="section">
+			<div class="section__nav">
+				<div class="nav__item" data-tab="#tab1">
+					<p class="nav__item-logo"><span class="icon-info"></span></p>
+					<p class="nav__item-title">information</p>
+				</div>
+				<div class="nav__item" data-tab="#tab2">
+					<p class="nav__item-logo"><span class="icon-card"></span></p>
+					<p class="nav__item-title">ratings info</p>
+				</div>
+				<div class="nav__item" data-tab="#tab3">
+					<p class="nav__item-logo"><span class="icon-bascket"></span></p>
+					<p class="nav__item-title">where to buy</p>
+				</div>
+			</div>
+			<div id="tab1" class="tab-page visible">
+				<div class="tab-page__body">
+					<div class="tab-page__body-leftside">
+						<div class="body__image-wrapper">
+							<img src="./images/pic1.png" alt="pic1" class="body__image">
+						</div>
+						<div class="body__rating-wrapper">
+							<span class="fa fa-star star-selected"></span>
+							<span class="fa fa-star star-selected"></span>
+							<span class="fa fa-star star-selected"></span>
+							<span class="fa fa-star star-selected"></span>
+							<span class="fa fa-star"></span>
+						</div>
+					</div>
+					<div class="tab-page__body-rightside">
+						<div class="body__title-wrapper">
+							<p class="body__title">FarCry 4</p>
+							<p class="body__subtitle">First Released Nov 17, 2014</p>
+						</div>
+						<div class="body__chart-wrapper" data-percent="78">
+							<p class="body__chart-value"></p>
+						</div>
+						<p class="body__text">In Far Cry 4, players find themselves in Kyrat, a breathtaking, perilous and wild region of the Himalayas struggling under the regime of a despotic self-appointed king.</p>
+						<div class="body__foot-wrapper">
+							<div class="body__price-wrapper">
+								<p class="body__discount">20% OFF!</p>
+								<p class="body__price">$59.96</p>
+							</div>
+							<button class="body__buy">Buy it now</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="tab2" class="tab-page">
+				<div class="tab-page__body">
+					<p class="body__text">TAB 2.   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere nulla labore, molestiae laudantium modi dolorem beatae 	et. Temporibus aut explicabo, sint eligendi soluta deserunt veniam, reprehenderit velit est commodi molestiae.
+					</p>
+				</div>
+			</div>
+			<div id="tab3" class="tab-page">
+				<div class="tab-page__body">
+					<p class="body__text">TAB 3.   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere nulla labore, molestiae laudantium modi dolorem beatae 	et. Temporibus aut explicabo, sint eligendi soluta deserunt veniam, reprehenderit velit est commodi molestiae.
+					</p>
+				</div>
+			</div>
+		</section>
+	</main>
+	<script src="js/jquery-3.2.1.js"></script>
+	<script src="js/pie-chart.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>

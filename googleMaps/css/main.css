@@ -1,0 +1,70 @@
+#map {
+  height: 100%;
+  width: 100%;
+ }
+
+ #right-panel {
+  font-family: 'Roboto','sans-serif';
+  line-height: 30px;
+
+  position: absolute;
+  top: 24px;
+  right: -6px;
+  background-color: #fff;
+}
+#right-panel select, #right-panel input {
+  font-size: 15px;
+}
+#right-panel select {
+  width: 100%;
+}
+#right-panel i {
+  font-size: 12px;
+}
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+#right-panel {
+  margin: 20px;
+  border-width: 2px;
+  width: 20%;
+  float: left;
+  text-align: left;
+  padding: 10px; 
+}
+#directions-panel {
+  margin-top: 10px;
+  background-color: #FFEE77;
+  padding: 10px;
+
+  position: absolute;
+  top: 35px;
+  left: 10px;
+  width: 20%;
+	
+  font-family: 'Roboto','sans-serif';
+  line-height: 20px;
+}
+
+#btn-way {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+}
+.block__title {
+  height: 5%;
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+.block__map {
+  height: 95%;
+  width: 100%;
+  position: relative;
+}
+.block__title h3 {
+  margin: auto 20px;
+}

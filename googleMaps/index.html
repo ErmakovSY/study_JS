@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Google Maps Integration</title>
+  <link rel="stylesheet" href="./css/main.css" />
+</head>
+<body>
+  <div class="block__title">
+    <h3>Google Maps</h3>
+    <button id="btn-way">Проложить маршрут...</button>
+  </div>
+  <div class="block__map">
+    <div id="map"></div>
+    <div id="right-panel" style="opacity:0">
+      <div>
+        <b>Start:</b>
+        <select id="start">
+          <option value="Zaporozhye, Запорожская область">Запорожье</option>
+          <option value="Poltava, Полтавская область">Полтава</option>
+          <option value="Kiyev, город Киев">Киев</option>
+          <option value="Odessa, Одесская область">Одесса</option>
+        </select>
+        <br>
+        <b>Waypoints:</b> <br>
+        <i>(Ctrl+Click or Cmd+Click for multiple selection)</i> <br>
+        <select multiple id="waypoints">
+          <option value="Zaporozhye, Запорожская область">Запорожье</option>
+          <option value="Poltava, Полтавская область">Полтава</option>
+          <option value="Kiyev, город Киев">Киев</option>
+          <option value="Odessa, Одесская область">Одесса</option>
+        </select>
+        <br>
+        <b>End:</b>
+        <select id="end">
+          <option value="Zaporozhye, Запорожская область">Запорожье</option>
+          <option value="Poltava, Полтавская область">Полтава</option>
+          <option selected value="Kiyev, город Киев">Киев</option>
+          <option value="Odessa, Одесская область">Одесса</option>
+        </select>
+        <br>
+        <input type="submit" id="submit">
+      </div>
+    </div>
+    <div id="directions-panel" style="opacity:0"></div>
+  </div>
+  <script src="./js/jquery-3.2.1.js"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBb7wZFJHwk6nWfeMdQy4fMPfIelzwdSpU&callback=initMap"></script>
+  <script src="./js/main.js"></script>
+</body>
+</html>

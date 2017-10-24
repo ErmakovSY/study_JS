@@ -1,0 +1,37 @@
+.testimonals {
+  background-color:  $bg-section-lightGray;
+  &__slider {
+    height: 315px;
+    background-color: $white;
+  }
+  &__slider-item {
+    justify-content: center;
+    align-items: flex-start;
+    padding: 50px 10px;
+  }
+  &__slider-image-wrapper {
+    height: 132px;
+    width: 132px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  &__scroll-wrapper {
+    width: 75% !important;
+    height: 100%;
+    padding: 0 20px;
+  }
+  &__slider-text-wrapper {
+    text-align: left;
+  }
+  &__slider-text {
+    margin-bottom: 15px;
+  }
+  &__slider-subtitle {
+    margin-bottom: 5px;
+  }
+  &__slider-title {
+    text-transform: uppercase;
+    color: $cyan;
+    font-weight: 600;
+  }
+}

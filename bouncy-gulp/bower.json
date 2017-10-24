@@ -1,0 +1,30 @@
+{
+  "name": "1.0",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "erm.sergey1989@gmail.com"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "latest",
+    "jquery-ui": "^1.12.1",
+    "jquery-slimscroll": "latest",
+    "font-awesome": "latest",
+    "parallax": "latest",
+    "simple-line-icons": "latest",
+    "slick-carousel": "latest",
+    "slick": "latest"
+  },
+  "devDependencies": {
+    "bxslider-4": "latest"
+  }
+}

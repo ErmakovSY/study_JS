@@ -1,0 +1,16 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>Copyright (C) 2017 by original authors @ fontello.com</metadata>
+<defs>
+<font id="iconsfont" horiz-adv-x="1000" >
+<font-face font-family="iconsfont" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
+<missing-glyph horiz-adv-x="1000" />
+<glyph glyph-name="bascket" unicode="&#xe800;" d="M997 462l2 0-125-563-2 0a62 62 0 0 0-60-49h-625a62 62 0 0 0-60 49l-1 0-125 563 1 0a59 59 0 0 0-2 13 63 63 0 0 0 63 63h125a313 313 0 1 0 625 0h125a63 63 0 0 0 62-63 59 59 0 0 0-3-13z m-497 263a188 188 0 0 1-187-187h375a188 188 0 0 1-188 187z m250-437a63 63 0 0 0-62 62v63h-375v-63a63 63 0 1 0-125 0v63h-48l98-438h524l98 438h-47v-63a63 63 0 0 0-63-62z" horiz-adv-x="1000" />
+
+<glyph glyph-name="info" unicode="&#xe801;" d="M875 37h-161l-170-169h0a63 63 0 0 0-88 0h0l-170 169h-161a125 125 0 0 0-126 125v563a125 125 0 0 0 126 126h750a125 125 0 0 0 126-126v-563a125 125 0 0 0-126-125z m0 626a63 63 0 0 1-62 62h-626a63 63 0 0 1-62-62v-438a63 63 0 0 1 62-63h125a63 63 0 0 0 45-18h0l143-143 143 143h0a62 62 0 0 0 45 18h125a63 63 0 0 1 62 63v438z m-187-375h-376a63 63 0 0 0 0 125h376a63 63 0 1 0 0-125z m0 187h-376a63 63 0 0 0 0 125h376a63 63 0 1 0 0-125z" horiz-adv-x="1000" />
+
+<glyph glyph-name="card" unicode="&#xe802;" d="M904 312a229 229 0 0 0-226-231 222 222 0 0 0-179 93l-1-1-46 62-45-62 0 1a224 224 0 0 0-181-93 229 229 0 0 0-226 231 232 232 0 0 0 46 138l0 0s331 400 406 400 407-400 407-400l0 0a232 232 0 0 0 45-138z m-527-308v77a75 75 0 1 0 151 0v-77a77 77 0 0 0 0-154h-151a77 77 0 0 0 0 154z" horiz-adv-x="905" />
+</font>
+</defs>
+</svg>

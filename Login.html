@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let inputLogin = prompt("Write Your Login");
+        if(inputLogin || inputLogin == "") {
+            if(inputLogin == "admin") {
+                let inputPassword = prompt("Write Your Password");
+                (inputPassword || inputPassword == "") ? 
+                    (inputPassword == "password" ? alert(`Welcome, ${inputLogin}`) : alert("Password incorrect")) : 
+                    alert("Canceled by User");
+            }
+            else {
+                alert(`I dont know who you are, ${inputLogin == "" ? "User" : inputLogin}`);
+            }
+        }
+        else {
+            alert("Canceled by User");
+        }
+
+    </script>
+</body>
+</html>
