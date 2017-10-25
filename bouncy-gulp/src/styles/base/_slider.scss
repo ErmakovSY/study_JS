@@ -11,9 +11,15 @@
     cursor: pointer;
     &--next {
       right: 10px;
+      @media (max-width: 650px) {
+        right: 1px;
+      }
     }
     &--prev {
       left: 10px;
+      @media (max-width: 650px) {
+        left: 1px;
+      }
     }
     i {
       color: $cyan;
@@ -21,7 +27,7 @@
     }
   }
   &__dots {
-    padding: 10px;
+    padding: 25px;
     display: flex;
     justify-content: center;
     align-items: center;

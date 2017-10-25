@@ -1,8 +1,8 @@
-@import "./base/_base.scss";
 @import "./base/_fonts.scss";
 @import "./base/_colors.scss";
-@import "./base/_reset.scss";
 @import "./base/_mixins.scss";
+@import "./base/_reset.scss";
+@import "./base/_base.scss";
 
 @import "./../vendor/font-awesome/scss/font-awesome.scss";
 @import "./../vendor/slick-carousel/slick/slick.scss";
@@ -14,3 +14,5 @@
 @import "./sections/_section-team.scss";
 @import "./sections/_section-contact.scss";
 @import "./sections/_section-testimonials.scss";
+@import "./sections/_section-map.scss";
+@import "./sections/_section-footer.scss";

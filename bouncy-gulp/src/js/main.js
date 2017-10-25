@@ -1,87 +1,28 @@
-$(document).ready(function() {
-  //portfolio-section
+$(document).ready(() => {
+  /* PORTFOLIO-section */
 
-    ////gallery
-    (function($) {
-      function getWindowWidth() {
-        return Math.max(document.documentElement.clientWidth, window.innerWidth || 0)
-      }
-      // Instantiate wookmark after all images have been loaded
-      let wookmark;
-      imagesLoaded('#filter-container', function() {
-        wookmark = new Wookmark('#filter-container', {
-          fillEmptySpace: true, // Optional, fill the bottom of each column with widths of flexible height
-          autoResize: true,
-          flexibleWidth: true,
-          itemWidth: function() {
-            return getWindowWidth() * 0.18;
-          }
-        });
-      });
-      // Setup filter buttons when jQuery is available
-      let $filters = $('.portfolio__tab');
-      /**
-       * When a filter is clicked, toggle it's active state and refresh.
-       */
-      function onClickFilter(e) {
-        let $item = $(e.currentTarget),
-            activeFilters = [],
-            filterType = $item.data('filter');
-        if (filterType === 'all') {
-          $filters.removeClass('active');
-        } else {
-          $item.toggleClass('active');
-          // Collect active filter strings
-          $filters.filter('.active').each(function() {
-            activeFilters.push($(this).data('filter'));
-          });
-        }
-        wookmark.filter(activeFilters, 'or');
-      }
-      // Capture filter click events.
-      $('.portfolio__tabs-wrapper').on('click.wookmark-filter', 'p', onClickFilter);
-    })(jQuery);
+    /* gallery */
+    $('.portfolio__tabs-block').filterizr({layout: 'sameWidth'});
+    /* end gallery */
+
+  /* END PORTFOLIO-section */
   
-  //team-section
+  /* TEAM-section */
 
-    ////slider
+  /* slider */
   $('.section__slider').slick({
-    arrows: true,
+    fade: true,
+    cssEase: 'linear',
+    arrows: ($(window).width() > 650) ? true : false,
     dots: true,
     prevArrow: '<button type="button" class="slider__arrow slider__arrow--prev"><i class="fa fa-angle-left" aria-hidden="true"></i></button>',
     nextArrow: '<button type="button" class="slider__arrow slider__arrow--next"><i class="fa fa-angle-right" aria-hidden="true"></i></button>',
     dotsClass: 'slider__dots',
-
-    // responsive: [
-    //   {
-    //     breakpoint: 1024,
-    //       settings: {
-    //         slidesToShow: 3,
-    //         slidesToScroll: 3,
-    //         infinite: true,
-    //         dots: true
-    //       }
-    //   },
-    //   {
-    //     breakpoint: 600,
-    //       settings: {
-    //         slidesToShow: 2,
-    //         slidesToScroll: 2
-    //       }
-    //   },
-    //   {
-    //     breakpoint: 480,
-    //       settings: {
-    //         slidesToShow: 1,
-    //         slidesToScroll: 1
-    //       }
-    //   }
-    // ]
   });
-
-    ////text-scroll
+  /* end slider */
+  /* text-scroll */
   $('.slider__text-wrapper').slimScroll({
-    height : '365px',
+    height : ($(window).width() > 650) ? '365px' : ($(window).width() > 380) ? '250px' : '150px',
     size : '4px',
     color: '#19bd9a',
     distance : '1px',
@@ -90,17 +31,107 @@ $(document).ready(function() {
     railBorderRadius : 'none',
     wrapperClass : 'slider__scroll-wrapper'
   });
+  /* end text-scroll */
 
-  //testimonals-section
-    ////text-scroll
-    $('.testimonals__slider-text-wrapper').slimScroll({
-      height : '140px',
-      size : '4px',
-      color: '#19bd9a',
-      distance : '1px',
-      opacity : 1,
-      borderRadius: 'none',
-      railBorderRadius : 'none',
-      wrapperClass : 'testimonals__scroll-wrapper',
-    });
-})
+  /* END TEAM-section */
+
+  /* TESTIMONALS-section */
+
+  /* text-scroll */
+  $('.testimonals__slider-text-wrapper').slimScroll({
+    height : '140px',
+    size : '4px',
+    color: '#19bd9a',
+    distance : '1px',
+    opacity : 1,
+    borderRadius: 'none',
+    railBorderRadius : 'none',
+    wrapperClass : 'testimonals__scroll-wrapper',
+    start: 'bottom'
+  });
+  /* end text-scroll */
+
+  /* END TESTIMONALS-section */
+
+  /* button-up */
+  if ($('#button__page-up').length) {
+		let scrollTrigger = 300, // px
+			backToTop = () => {
+				let scrollTop = $(window).scrollTop();
+				if (scrollTop > scrollTrigger) {
+					$('#button__page-up').addClass('is-visible');
+				} else {
+					$('#button__page-up').removeClass('is-visible');
+				}
+			};
+		backToTop();
+		$(window).on('scroll', () => {
+			backToTop();
+		});
+		$('#button__page-up').on('click', (e) => {
+			e.preventDefault();
+			$('html,body').animate({
+				scrollTop: 0
+			}, 1000);
+		});
+  }
+  /* end button-up */
+  
+  /* slow scroll from menu-item to current section */
+  slowScroll = (item) => {
+    let id = $(item).attr('href');
+    let topOfPage = $(id).offset().top;
+    $('body,html').animate({scrollTop: topOfPage}, 700);
+  }
+  /* end slow scroll from menu-item to current section */
+
+  /* MAIN-section */
+
+  $('#button__nav').click((e) => {
+    e.preventDefault();
+    hideShowMenu('.header__nav-wrapper');
+  });
+
+  $(window).on('scroll', () => {
+    let menuPosition = hideShowMenu('.header__nav-wrapper', 'check');
+    if (menuPosition && $(window).width() < 540) {
+      hideShowMenu('.header__nav-wrapper', 'hide');
+    }
+  });
+
+  /* END MAIN-section */
+
+});
+
+function hideShowMenu(selector, action = null) {
+  switch(action) {
+    case 'hide': $(selector).animate({right: '-100%', opacity: 0}, 500); break;
+    case 'show': $(selector).animate({right: '50%', opacity: 1}, 500); break;
+    case 'check': return ($(selector).css('opacity') != 1) ? 0 : 1; break;
+    default: {
+      if ($(selector).css('opacity') == 1) {
+        $(selector).animate({right: '-100%', opacity: 0}, 500);
+      } else {
+        $(selector).animate({right: '50%', opacity: 1}, 500);
+      }
+    }
+  }
+}
+
+function initMap() {
+  map = new google.maps.Map(document.getElementById('mapBlock'), {
+    zoom: 14,
+    center: {lat: 47.816011, lng: 35.170238},
+    zoomControl: false,
+    mapTypeControl: false,
+    scaleControl: false,
+    streetViewControl: false,
+    rotateControl: false,
+    fullscreenControl: false
+  });
+  marker = new google.maps.Marker({
+    position: {lat: 47.816011, lng: 35.170238},
+    map: map,
+    icon: './img/map-marker.png'
+  });
+}

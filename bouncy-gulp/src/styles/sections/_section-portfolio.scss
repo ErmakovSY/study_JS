@@ -1,10 +1,12 @@
 .portfolio {
-  min-height: 100vh;
   background-color: $bg-section-lightGray;
   &__tabs-wrapper {
     display: flex;
     justify-content: center;
     margin-bottom: 25px;
+    @media (max-width: 420px) {
+      flex-direction: column;
+    }
   }
   &__tab {
     position: relative;
@@ -26,14 +28,37 @@
       background-color: $cyan;
       opacity: 0;
       @include transition(0.3s);
+      @media (max-width: 420px) {
+        bottom: 5px;
+      }
     }
     &:hover:before {
       opacity: 1;
+    }
+    @media (max-width: 520px) {
+      font-size: 14px;
+    }
+    @media (max-width: 420px) {
+      margin-right: 0;
+      text-align: center;
     }
   }
   &__tabs-block {
     width: 100%;
     background-color: $bg-section-lightGray;
+  }
+  &__item {
+    width: 25%;
+    padding: 0 2px;
+    @media (max-width: 915px) {
+      width: 33%;
+    }
+    @media (max-width: 600px) {
+      width: 50%;
+    }
+    @media (max-width: 350px) {
+      width: 100%;
+    }
   }
 }
 .section {
@@ -44,6 +69,9 @@
     text-transform: uppercase;
     text-align: center;
     margin: 0 auto 40px;
+    @media (max-width: 768px) {
+      margin-bottom: 20px;
+    }
   }
   &__subtitle {
     width: 60%;
@@ -51,5 +79,9 @@
     line-height: 25px;
     text-align: center;
     margin: 0 auto 85px;
+    @media (max-width: 768px) {
+      width: 100%;
+      margin-bottom: 20px;
+    }
   }
 }

@@ -22,7 +22,8 @@
     "parallax": "latest",
     "simple-line-icons": "latest",
     "slick-carousel": "latest",
-    "slick": "latest"
+    "slick": "latest",
+    "filterizr": "^1.2.5"
   },
   "devDependencies": {
     "bxslider-4": "latest"

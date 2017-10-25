@@ -51,8 +51,7 @@ gulp.task('js', () => {
   gulp.src([
     './src/vendor/jquery/dist/jquery.min.js',
     './src/vendor/jquery-ui/jquery-ui.min.js',
-    './src/vendor/imagesloaded/imagesloaded.pkgd.min.js',
-    './src/vendor/wookmark/wookmark.min.js',
+    './src/vendor/filterizr/dist/jquery.filterizr.min.js',
     './src/vendor/slick-carousel/slick/slick.min.js',
     './src/vendor/jquery-slimscroll/jquery.slimscroll.min.js',
     './src/js/main.js'
