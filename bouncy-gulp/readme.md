@@ -1,4 +1,4 @@
-Start Template with Gulp
+Start Project with Gulp
 
 Manual:
 
@@ -6,7 +6,7 @@ Install gulp - [ npm install gulp --save-dev ] / [ yarn add gulp ]
 
 Install Bower packages/dependencies - [ bower install ]
 
-Install modules/plugins/dependencies from package.json - [ npm i ] / [yarn install]
+Install modules/plugins/dependencies from package.json - [ gulp install ] / [yarn install]
 
 Launch gulp - [ gulp ]
 
