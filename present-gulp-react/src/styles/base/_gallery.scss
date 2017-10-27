@@ -1,0 +1,9 @@
+.grid-sizer { 
+  width: 25%; 
+  @media (max-width: 1175px) {
+    width: 33.3%;
+  }
+  @media (max-width: 900px) {
+    width: 50%;
+  }
+}

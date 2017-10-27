@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Bouncy</title>
+  <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+  <button class="button__page-up button-round" id="button__page-up"><i class="fa fa-angle-up" aria-hidden="true"></i></button>
+  <button class="button__nav button-round" id="button__nav"><i class="fa fa-bars" aria-hidden="true"></i></button>
+  <section class="main" id="main">
+    <div class="container main__container">
+      <header class="header">
+        <div class="header__logo-wrapper">
+          <img src="./img/logo.png" alt="bouncy" class="img">
+        </div>
+        <div class="header__nav-wrapper">
+          <a onClick="slowScroll(this);" href="#main" class="header__nav-item">Hello</a>
+          <a onClick="slowScroll(this);" href="#portfolio" class="header__nav-item">Portfolio</a>
+          <a onClick="slowScroll(this);" href="#team" class="header__nav-item">Team</a>
+          <a onClick="slowScroll(this);" href="#contact" class="header__nav-item">Contact</a>
+        </div>
+      </header>
+      <p class="main__title">We are code cafe</p>
+      <p class="main__subtitle">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum</p>
+      <a onClick="slowScroll(this);" href="#portfolio" class="main__btn button-round"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
+    </div>
+  </section>
+  <section class="portfolio" id="portfolio">
+    <div class="container portfolio__container">
+      <p class="section__title">The Portfolio</p>
+      <p class="section__subtitle">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium</p>
+      <div class="portfolio__tabs-wrapper">
+        <p class="portfolio__tab" data-filter="all">All Works</p>
+        <p class="portfolio__tab" data-filter="1">Print</p>
+        <p class="portfolio__tab" data-filter="2">Branding</p>
+        <p class="portfolio__tab" data-filter="3">Web</p>
+        <p class="portfolio__tab" data-filter="4">HTML</p>
+      </div>
+      <div class="portfolio__tabs-block">
+          <div class="portfolio__item filtr-item" data-category="1">
+            <img src="./img/portfolio/1-1.png" class="img">
+          </div>
+          <div class="portfolio__item filtr-item" data-category="2">
+            <img src="./img/portfolio/1-2.png" class="img">
+          </div>
+          <div class="portfolio__item filtr-item" data-category="3">
+            <img src="./img/portfolio/1-3.png" class="img">
+          </div>
+          <div class="portfolio__item filtr-item" data-category="3">
+            <img src="./img/portfolio/1-4.png" class="img">
+          </div>
+          <div class="portfolio__item filtr-item" data-category="1">
+            <img src="./img/portfolio/2-1.png" class="img">
+          </div>
+          <div class="portfolio__item filtr-item" data-category="2">
+            <img src="./img/portfolio/2-2.png" class="img">
+          </div>
+          <div class="portfolio__item filtr-item" data-category="3">
+            <img src="./img/portfolio/2-3.png" class="img">
+          </div>
+          <div class="portfolio__item filtr-item" data-category="3">
+            <img src="./img/portfolio/2-4.png" class="img">
+          </div>
+          <div class="portfolio__item filtr-item" data-category="4">
+            <img src="./img/portfolio/3-1.png" class="img">
+          </div>
+          <div class="portfolio__item filtr-item" data-category="1">
+            <img src="./img/portfolio/3-2.png" class="img">
+          </div>
+          <div class="portfolio__item filtr-item" data-category="4">
+            <img src="./img/portfolio/3-3.png" class="img">
+          </div>
+          <div class="portfolio__item filtr-item" data-category="4">
+            <img src="./img/portfolio/3-4.png" class="img">
+          </div>
+      </div>
+    </div>
+  </section>
+  <section class="team" id="team">
+    <div class="container team__container">
+      <p class="section__title">The Team</p>
+      <p class="section__subtitle">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium</p>
+      <div class="section__slider">
+        <div class="slider__item">
+          <div class="slider__image-wrapper">
+            <img src="./img/team/image-1.png" alt="img1" class="img">
+            <div class="slider__image-overlay">
+              <div class="overlay__social-item">
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+              </div>
+              <div class="overlay__social-item">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+              </div>
+              <div class="overlay__social-item">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+              </div>
+            </div>
+          </div>
+          <div class="slider__text-wrapper" id="scroll-text">
+            <span class="slider__title">Abdullah Noman</span>
+            <span class="slider__subtitle">Creative Director, Code Cafe</span>
+            <span class="slider__text">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium.</span>
+          </div>
+        </div>
+        <div class="slider__item">
+          <div class="slider__image-wrapper">
+            <img src="./img/team/image-2.png" alt="img2" class="img">
+            <div class="slider__image-overlay">
+              <div class="overlay__social-item">
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+              </div>
+              <div class="overlay__social-item">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+              </div>
+              <div class="overlay__social-item">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+              </div>
+            </div>
+          </div>
+          <div class="slider__text-wrapper" id="scroll-text">
+            <span class="slider__title">Mark Backer</span>
+            <span class="slider__subtitle">Web Designer, Code Cafe</span>
+            <span class="slider__text">At vero eos et accusamus et iusto. At vero eos et accusamus et iusto odio. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium.</span>
+          </div>
+        </div>
+        <div class="slider__item">
+          <div class="slider__image-wrapper">
+            <img src="./img/team/image-3.png" alt="img3" class="img">
+            <div class="slider__image-overlay">
+              <div class="overlay__social-item">
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+              </div>
+              <div class="overlay__social-item">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+              </div>
+              <div class="overlay__social-item">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+              </div>
+            </div>
+          </div>
+          <div class="slider__text-wrapper" id="scroll-text">
+            <span class="slider__title">John Newman</span>
+            <span class="slider__subtitle">Developer, Code Cafe</span>
+            <span class="slider__text">At vero eos et accusamus. At vero eos et accusamus et iusto odio dignissimos ducimus. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="contact" id="contact">
+    <p class="contact__title">Already Loved Us? Let’s talk!</p>
+    <button class="contact__btn">Contact Us</button>
+  </section>
+  <section class="testimonals">
+    <div class="container testimonals__container">
+      <p class="section__title">Testimonals</p>
+      <p class="section__subtitle">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium</p>
+      <div class="section__slider testimonals__slider">
+        <div class="slider__item testimonals__slider-item">
+          <div class="slider__image-wrapper testimonals__slider-image-wrapper">
+            <img src="./img/testimonilas/image-1.png" alt="img1" class="img">
+          </div>
+          <div class="testimonals__slider-text-wrapper">
+            <span class="slider__text testimonals__slider-text">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia. </span>
+            <span class="slider__title testimonals__slider-title">Partho</span>
+            <span class="slider__subtitle testimonals__slider-subtitle">Founder, Artways BD</span>
+          </div>
+        </div>
+        <div class="slider__item testimonals__slider-item">
+          <div class="slider__image-wrapper testimonals__slider-image-wrapper">
+            <img src="./img/testimonilas/image-2.png" alt="img1" class="img">
+          </div>
+          <div class="testimonals__slider-text-wrapper">
+            <span class="slider__text testimonals__slider-text">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia. </span>
+            <span class="slider__title testimonals__slider-title">House</span>
+            <span class="slider__subtitle testimonals__slider-subtitle">Founder, Artways BD</span>
+          </div>
+        </div>
+        <div class="slider__item testimonals__slider-item">
+          <div class="slider__image-wrapper testimonals__slider-image-wrapper">
+            <img src="./img/testimonilas/image-3.png" alt="img1" class="img">
+          </div>
+          <div class="testimonals__slider-text-wrapper">
+            <span class="slider__text testimonals__slider-text">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia. </span>
+            <span class="slider__title testimonals__slider-title">Leonardo</span>
+            <span class="slider__subtitle testimonals__slider-subtitle">Founder, Artways BD</span>
+          </div>
+        </div>
+        <div class="slider__item testimonals__slider-item">
+          <div class="slider__image-wrapper testimonals__slider-image-wrapper">
+            <img src="./img/testimonilas/image-4.png" alt="img1" class="img">
+          </div>
+          <div class="testimonals__slider-text-wrapper">
+            <span class="slider__text testimonals__slider-text">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia. </span>
+            <span class="slider__title testimonals__slider-title">Bradley</span>
+            <span class="slider__subtitle testimonals__slider-subtitle">Founder, Artways BD</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="map">
+    <div id="mapBlock" class="map__block"></div>
+  </section>
+  <footer class="footer">
+    <div class="footer__logo-wrapper">
+      <img src="./img/footer-logo.png" alt="img1" class="img">
+    </div>
+    <p class="footer__copy">Copyright 2017. All rights Reserved</p>
+    <div class="footer__social-wrapper">
+      <a href="#" class="footer__social footer__social--facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+      <a href="#" class="footer__social footer__social--twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+      <a href="#" class="footer__social footer__social--linkedin"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+      <a href="#" class="footer__social footer__social--instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+      <a href="#" class="footer__social footer__social--vimeo"><i class="fa fa-vimeo" aria-hidden="true"></i></a>
+    </div>
+  </footer>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBb7wZFJHwk6nWfeMdQy4fMPfIelzwdSpU&callback=initMap"></script>
+  <script src="./js/main.js"></script>
+</body>
+</html>
