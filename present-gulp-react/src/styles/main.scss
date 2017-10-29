@@ -4,15 +4,7 @@
 @import "./base/_reset.scss";
 @import "./base/_base.scss";
 
-@import "./../vendor/font-awesome/scss/font-awesome.scss";
-@import "./../vendor/slick-carousel/slick/slick.scss";
-
-@import "./base/_slider.scss";
-@import "./base/_gallery.scss";
-@import "./sections/_section-main.scss";
-@import "./sections/_section-portfolio.scss";
-@import "./sections/_section-team.scss";
-@import "./sections/_section-contact.scss";
-@import "./sections/_section-testimonials.scss";
-@import "./sections/_section-map.scss";
-@import "./sections/_section-footer.scss";
+@import "./components/app.scss";
+@import "./components/section.scss";
+@import "./components/container.scss";
+@import "./components/header.scss";

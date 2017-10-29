@@ -21,8 +21,9 @@ const concat = require('gulp-concat');
 const minify = require('gulp-minify');
 
 /* Plugin for JSX */
-const babel = require('gulp-babel');
-const eslint = require('gulp-eslint');
+const browserify = require('browserify');
+const babelify = require('babelify');
+const source = require('vinyl-source-stream');
 
 /* HELPERS */
 const notify = require('gulp-notify'); /* Plugin show errors */
@@ -36,11 +37,7 @@ let onError = (err) => {
     title:    "Error",
     message:  "<%= error %>",
   })(err);
-  this.emit('end');
-};
-let plumberOptions = {
-  errorHandler: onError,
-};
+}
 
 /* Task for HTML */
 gulp.task('html', () => {
@@ -52,9 +49,13 @@ gulp.task('html', () => {
 
 /* Task for CSS */
 gulp.task('css', () => {
-  gulp.src('./src/styles/main.scss')
-    .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
+  gulp.src([
+    './src/styles/main.scss',
+    './src/components/*.scss'
+  ])
+    .pipe(plumber({errorHandler: onError}))
     .pipe(sourcemaps.init())
+    .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
     .pipe(autoprefixer({
       browsers: ['last 2 versions'],
       cascade: false
@@ -64,41 +65,32 @@ gulp.task('css', () => {
     .pipe(reload({ stream: true }));
 });
 
-// Lint JS/JSX files
-gulp.task('eslint', () => {
-  return gulp.src(jsFiles.source)
-    .pipe(eslint({
-      baseConfig: {
-        "ecmaFeatures": {
-           "jsx": true
-         }
-      }
-    }))
-    .pipe(eslint.format())
-    .pipe(eslint.failAfterError());
+/* Task for JSX */
+gulp.task('jsx', () => {
+  return browserify({entries: './src/js/main.jsx', extensions: ['.jsx'], debug: true})
+  .transform('babelify', {presets: ['es2015', 'react']})
+  .bundle()
+  .pipe(source('main.js'))
+  .pipe(gulp.dest('./build/js'))
+  .pipe(reload({ stream: true }));
 });
 
 /* Task for JS */
-gulp.task('js', () => {
-  gulp.src([
-    './src/vendor/jquery/dist/jquery.min.js',
-    './src/vendor/jquery-ui/jquery-ui.min.js',
-    './src/vendor/filterizr/dist/jquery.filterizr.min.js',
-    './src/vendor/slick-carousel/slick/slick.min.js',
-    './src/vendor/jquery-slimscroll/jquery.slimscroll.min.js',
-    './src/js/main.js'
-  ])
-    .pipe(concat('main.js'))
-    .pipe(minify({
-      ext: {
-        min: '.js'
-      },
-      compress: true,
-      noSource: true,
-    }))
-    .pipe(gulp.dest('./build/js'))
-    .pipe(reload({ stream: true }));
-});
+// gulp.task('js', () => {
+//   gulp.src([
+//     './src/js/main.js'
+//   ])
+//     .pipe(concat('main.js'))
+//     .pipe(minify({
+//       ext: {
+//         min: '.js'
+//       },
+//       compress: true,
+//       noSource: true,
+//     }))
+//     .pipe(gulp.dest('./build/js'))
+//     .pipe(reload({ stream: true }));
+// });
 
 /* Task for PHP */
 gulp.task('php', () => {
@@ -117,14 +109,14 @@ gulp.task('image', () => {
 });
 
 /* Task for Fonts */
-gulp.task('fonts', () => {
-  gulp.src([
-    './src/fonts/**/*.*',
-    './src/vendor/font-awesome/fonts/*.*'
-  ])
-    .pipe(newer('./build/fonts/'))
-    .pipe(gulp.dest('./build/fonts/'))
-});
+// gulp.task('fonts', () => {
+//   gulp.src([
+//     './src/fonts/**/*.*',
+//     './src/vendor/font-awesome/fonts/*.*'
+//   ])
+//     .pipe(newer('./build/fonts/'))
+//     .pipe(gulp.dest('./build/fonts/'))
+// });
 
 /* Task for file .htaccess */
 gulp.task('htaccess', () => {
@@ -133,7 +125,7 @@ gulp.task('htaccess', () => {
 });
 
 /* Task Build */
-gulp.task('build', ['html', 'css', 'js', 'php', 'image', 'fonts', 'htaccess']);
+gulp.task('build', ['html', 'css', 'jsx', 'php', 'image', 'htaccess']);
 
 /* Task for webserver */
 const config = {
@@ -149,10 +141,11 @@ const config = {
 gulp.task('webserver', () => browserSync(config));
 
 /* Task Watch */
-gulp.task('watch', function () {
+gulp.task('watch', () => {
   watch('./src/*.html', () => gulp.run('html'));
   watch('./src/styles/**/*.scss', () => gulp.run('css'));
-  watch('./src/js/**/*.js', () => gulp.run('js'));
+  // watch('./src/components/*.{js,jsx}', () => gulp.run('jsx'));
+  watch('./src/components/*.jsx', () => gulp.run('jsx'));
   watch('./src/img/**/*.*', () => gulp.run('image'));
   watch('./src/fonts/**/*.*', () => gulp.run('fonts'));
 });
