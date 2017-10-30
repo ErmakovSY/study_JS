@@ -81,3 +81,17 @@
   justify-content: $align-horizontal;
   align-items: $align-vertical;
 }
+
+@mixin button-1($width, $bg-color, $br-color, $bg-color-hover, $br-color-hover) {
+  height: 45px;
+  width: $width;
+  background-color: $bg-color;
+  border: 1px solid $br-color;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    background-color: $bg-color-hover;
+    border-color: $br-color-hover;
+  }
+}

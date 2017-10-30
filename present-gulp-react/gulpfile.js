@@ -67,7 +67,7 @@ gulp.task('css', () => {
 
 /* Task for JSX */
 gulp.task('jsx', () => {
-  return browserify({entries: './src/js/main.jsx', extensions: ['.jsx'], debug: true})
+  return browserify({entries: './src/js/index.jsx', extensions: ['.jsx'], debug: true})
   .transform('babelify', {presets: ['es2015', 'react']})
   .bundle()
   .pipe(source('main.js'))
@@ -109,14 +109,15 @@ gulp.task('image', () => {
 });
 
 /* Task for Fonts */
-// gulp.task('fonts', () => {
-//   gulp.src([
-//     './src/fonts/**/*.*',
-//     './src/vendor/font-awesome/fonts/*.*'
-//   ])
-//     .pipe(newer('./build/fonts/'))
-//     .pipe(gulp.dest('./build/fonts/'))
-// });
+gulp.task('fonts', () => {
+  gulp.src([
+    //'./src/fonts/**/*.*',
+    // './src/vendor/font-awesome/fonts/*.*,'
+    './node_modules/slick-carousel/slick/fonts/*.*',
+  ])
+    .pipe(newer('./build/fonts/'))
+    .pipe(gulp.dest('./build/fonts/'))
+});
 
 /* Task for file .htaccess */
 gulp.task('htaccess', () => {
@@ -125,7 +126,7 @@ gulp.task('htaccess', () => {
 });
 
 /* Task Build */
-gulp.task('build', ['html', 'css', 'jsx', 'php', 'image', 'htaccess']);
+gulp.task('build', ['html', 'css', 'jsx', 'php', 'image', 'fonts', 'htaccess']);
 
 /* Task for webserver */
 const config = {

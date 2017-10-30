@@ -1,10 +1,14 @@
-@import "./base/_fonts.scss";
+@import "./../../node_modules/slick-carousel/slick/slick.scss";
+@import "./../../node_modules/slick-carousel/slick/slick-theme.scss";
+
 @import "./base/_colors.scss";
 @import "./base/_mixins.scss";
 @import "./base/_reset.scss";
 @import "./base/_base.scss";
+@import "./base/_fonts.scss";
 
-@import "./components/app.scss";
-@import "./components/section.scss";
-@import "./components/container.scss";
-@import "./components/header.scss";
+@import "./components/_app.scss";
+@import "./components/_section.scss";
+@import "./components/_container.scss";
+@import "./components/_header.scss";
+@import "./components/_slider.scss";

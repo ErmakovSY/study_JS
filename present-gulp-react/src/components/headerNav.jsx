@@ -1,12 +1,23 @@
 import React from 'react';
-import HeaderLink from './headerLink.jsx';
 
 class HeaderNav extends React.Component {
-  childClick() {
-    console.log("click");
+  constructor(props) {
+    super(props);
+    this.state = {activeItem: 0};
+  }
+  clickHandler(index) {
+    console.log(`click on ${index}`);
+    this.setState({activeItem: index});
+  }
+  getClassesName(index) {
+    let classes = {
+      active: 'header__nav-item header__nav-item--active',
+      disactive: 'header__nav-item'
+    };
+    return (index == this.state.activeItem) ? classes.active : classes.disactive;
   }
   render() {
-    const items = [
+    const menuItems = [
       {title: 'Home', href: '#'}, 
       {title: "About", href: "#"}, 
       {title: "Work", href: "#"}, 
@@ -17,9 +28,17 @@ class HeaderNav extends React.Component {
     ];
     return (
       <div className="header__nav">
-        {items.map((item) => {
-          return <HeaderLink title={item.title} href={item.href} clickToItem={this.childClick.bind(this)} />;
-        })}
+        {
+          menuItems.map((item, i) => {
+            return <a 
+                className={this.getClassesName(i)}
+                onClick={this.clickHandler.bind(this, i)} 
+                href={item.href}
+              >
+                {item.title}
+              </a> 
+          })
+        }
       </div>
     )
   }

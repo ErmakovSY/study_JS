@@ -4,8 +4,13 @@ body {
   height: 200vh;
   @include font("Open Sans", 14, 400, $white)
 }
-.img {
+.image {
   height: 100%;
   width: 100%;
   object-fit: cover;
+}
+.button {
+  @include button-1(124px, $trp, $white, $cyan, $cyan);
+  @include font("Open Sans", 14, 600, $white);
+  text-transform: uppercase;
 }
