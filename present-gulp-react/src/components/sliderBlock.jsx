@@ -1,6 +1,6 @@
 import React from 'react';
 import Slider from 'react-slick';
-import MainSlide_1 from "./mainSlide1.jsx";
+import MainSlide from "./mainSlide.jsx";
 
 class SliderBlock extends React.Component {
   render() {
@@ -18,11 +18,16 @@ class SliderBlock extends React.Component {
       <Slider {...settings}>
         <div className='slider__item'>
           <img src={'./img/main-bg.png'} className="image" />
-          <MainSlide_1 />
+          <MainSlide slideNumber={1} />
         </div>
-        <div className='slider__item'><img src='http://placekitten.com/g/400/200' className="image" /></div>
-        <div className='slider__item'><img src='http://placekitten.com/g/400/200' className="image" /></div>
-        <div className='slider__item'><img src='http://placekitten.com/g/400/200' className="image" /></div>
+        <div className='slider__item'>
+          <img src='http://placekitten.com/g/400/200' className="image" />
+          <MainSlide slideNumber={2} />
+        </div>
+        <div className='slider__item'>
+          <img src='http://placekitten.com/g/400/200' className="image" />
+          <MainSlide slideNumber={3} />
+        </div>
       </Slider>
     );
   }
