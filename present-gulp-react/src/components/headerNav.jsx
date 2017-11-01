@@ -18,13 +18,13 @@ class HeaderNav extends React.Component {
   }
   render() {
     const menuItems = [
-      {title: 'Home', href: '#'}, 
-      {title: "About", href: "#"}, 
-      {title: "Work", href: "#"}, 
-      {title: "Team", href: "#"}, 
-      {title: "Services", href: "#"},
-      {title: "Features", href: "#"}, 
-      {title: "Contact", href: "#"}
+      {title: 'Home', href: '#home'}, 
+      {title: "About", href: "#about"}, 
+      {title: "Work", href: "#work"}, 
+      {title: "Team", href: "#team"}, 
+      {title: "Services", href: "#services"},
+      {title: "Features", href: "#features"}, 
+      {title: "Contact", href: "#contact"}
     ];
     return (
       <div className="header__nav">

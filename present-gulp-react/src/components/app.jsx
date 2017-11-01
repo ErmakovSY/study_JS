@@ -7,7 +7,8 @@ class App extends React.Component {
   render() {
     return (
       <div className="app">
-        <Section />
+        <Section sectionClass="section__main" />
+        <Section sectionClass="section__about" />
      </div>
     );
   }
