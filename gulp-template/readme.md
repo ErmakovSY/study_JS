@@ -2,12 +2,8 @@ Start Template with Gulp
 
 Manual:
 
-Install gulp - [ npm install gulp --save-dev ] / [ yarn add gulp ]
+1. Install modules/plugins/dependencies from package.json - [ npm i ] / [ yarn ]
 
-Install Bower packages/dependencies - [ bower install ]
+2. Launch gulp - [ gulp ]
 
-Install modules/plugins/dependencies from package.json - [ npm i ] / [yarn install]
-
-Launch gulp - [ gulp ]
-
-STOP gulp - [ ctrl + c ]
+3. STOP gulp - [ ctrl + c ]

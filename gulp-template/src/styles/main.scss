@@ -1,1 +1,12 @@
-@import "./base/_base.scss";
+@import './../../node_modules/slick-carousel/slick/slick.scss';
+
+/* BASE */
+@import './base/_reset.scss';
+@import './base/_colors.scss';
+@import './base/_fonts.scss';
+@import './base/_mixins.scss';
+@import './base/_base.scss';
+
+/* SECTIONS */
+@import './sections/_header.scss';
+@import './sections/_slider.scss';
