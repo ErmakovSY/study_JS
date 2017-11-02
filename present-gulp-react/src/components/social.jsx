@@ -10,8 +10,8 @@ class Social extends React.Component {
     return (
       <div className={this.props.className}>
         {
-          socialItems.map((item) => {
-            return <a className="social__link" href={item.href}>
+          socialItems.map((item, i) => {
+            return <a className="social__link" href={item.href} key={i}>
                      <FontAwesome name={item.brand} />
                   </a> 
           })

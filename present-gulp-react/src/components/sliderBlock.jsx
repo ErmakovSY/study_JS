@@ -52,9 +52,9 @@ class SliderBlock extends React.Component {
         return (
           <Slider {...settings}>
             {
-              items.map((item) => {
+              items.map((item, i) => {
                 return (
-                  <div className='slider__item--team'>
+                  <div className='slider__item--team' key={i}>
                     <TeamItem image={item.image} name={item.name} job={item.job} social={item.social} />
                   </div> 
                 )

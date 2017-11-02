@@ -7,8 +7,7 @@ class HeaderNav extends React.Component {
     super(props);
     this.state = {activeItem: 0};
   }
-  clickHandler(index) {
-    console.log(`click on ${index}`);
+  clickHandler(index, item) {
     this.setState({activeItem: index});
   }
   getClassesName(index) {
@@ -25,7 +24,7 @@ class HeaderNav extends React.Component {
       {title: "Work", href: "#work"}, 
       {title: "Team", href: "#team"}, 
       {title: "Services", href: "#services"},
-      {title: "Features", href: "#features"}, 
+      {title: "Features", href: "#portfolio"}, 
       {title: "Contact", href: "#contact"}
     ];
     return (
@@ -34,8 +33,9 @@ class HeaderNav extends React.Component {
           menuItems.map((item, i) => {
             return <a 
                 className={this.getClassesName(i)}
-                onClick={this.clickHandler.bind(this, i)} 
+                onClick={this.clickHandler.bind(this, i, item)} 
                 href={item.href}
+                key={i}
               >
                 {item.title}
               </a> 

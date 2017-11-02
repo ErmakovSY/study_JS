@@ -1,7 +1,7 @@
 import React from 'react';
 import Gallery from 'react-grid-gallery';
 
-class Example extends React.Component {
+class Portfolio extends React.Component {
   constructor(props){
         super(props);
         this.state = {
@@ -10,18 +10,16 @@ class Example extends React.Component {
     }
 render() {
     return (
-
-         <div style={{
-                    display: "block",
-                    minHeight: "1px",
-                    width: "100%",
-                    border: "1px solid #ddd",
-                    overflow: "auto"}}>
+        <div className="section__content-wrapper portfolio__content" style={{
+            display: "block",
+            minHeight: "1px",
+            width: "100%",
+            overflow: "auto"}}>
         <Gallery 
           images={this.state.images} 
           enableImageSelection={false}
           backdropClosesModal={true} 
-          margin={30}
+          margin={15}
           rowHeight={265}
         />
         </div>
@@ -29,6 +27,6 @@ render() {
     );
   }
 }
-export default Example;
+export default Portfolio;
 
 //https://www.npmjs.com/package/react-grid-gallery

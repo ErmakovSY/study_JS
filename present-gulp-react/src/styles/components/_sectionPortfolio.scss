@@ -6,8 +6,26 @@
     }
   }
 }
-.react-photo-gallery--gallery {
+.tile-viewport {
   img {
-    
+    margin-left: 0 !important;
+  }
+}
+.tile {
+  &:nth-of-type(3n - 2) {
+    margin-left: 0 !important;
+  }
+  &:nth-of-type(3n + 3) {
+    margin-right: 0 !important;
+  }
+}
+.portfolio {
+  &__button {
+    display: block;
+    width: 140px;
+    margin: 0 auto;
+  }
+  &__content {
+    margin-bottom: 40px;  
   }
 }

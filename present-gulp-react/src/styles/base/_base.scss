@@ -44,4 +44,37 @@ body {
       }
     }
   }
+  &__up {
+    position: fixed;
+    bottom: 20px;
+    right: -75px;
+    width: 40px;
+    height: 40px;
+    border: 2px solid $black;
+    border-radius: 6px;
+    background-color: $trp;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+    span {
+      font-size: 36px;
+      font-weight: bold;
+      color: $black;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      opacity: 0.6;
+    }
+    &:hover {
+      opacity: 1;
+      span {
+        opacity: 1;
+      }
+    }
+    &--toggled {
+      right: 20px;
+      opacity: 0.6;
+    }
+  }
 }

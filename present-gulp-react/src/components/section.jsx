@@ -1,11 +1,11 @@
 import React from 'react';
+import Button from './button.jsx';
 import Header from './header.jsx';
 import SliderBlock from './sliderBlock.jsx';
 import SectionTitle from './sectionTitle.jsx';
 import ContentAbout from './contentAbout.jsx';
 import TeamItem from './teamItem.jsx';
-// import Gallery from 'react-photo-gallery';
-import Example from './gallery.jsx';
+import Portfolio from './gallery.jsx';
 import ParallaxContainer from './parallax.jsx';
 
 /* Section component */
@@ -22,7 +22,7 @@ class Section extends React.Component {
       );
       /* ABOUT section */
       case "section__about": return (
-        <div id="about" className={this.props.sectionClass}>
+        <div className={this.props.sectionClass}>
           <div className="container">
             <SectionTitle titleClass="section__title section__title--dark" text="We are modest." />
             <div className="section__content-wrapper">
@@ -44,7 +44,7 @@ class Section extends React.Component {
           {image: './img/team-2.png', name: "Bruce Grand", job: "Sales Manager", social: [{brand: 'twitter', href: '#'}, {brand: 'pinterest', href: '#'}, {brand: 'facebook', href: '#'}]},
         ];
         return (
-          <div id="team" className={this.props.sectionClass}>
+          <div className={this.props.sectionClass}>
             <div className="container">
               <SectionTitle titleClass="section__title section__title--dark" text="Meet the team." />
               <div className="section__content-wrapper">
@@ -66,13 +66,11 @@ class Section extends React.Component {
           {src: './img/portfolio-6.png', thumbnail: './img/portfolio-6.png', thumbnailWidth: 360, thumbnailHeight: 265},
         ];
         return (
-          <div id="portfolio" className={this.props.sectionClass}>
+          <div className={this.props.sectionClass}>
             <div className="container">
-              <SectionTitle titleClass="section__title section__title--dark" text="Lovely work." />
-              <div className="section__content-wrapper">
-                {/* <Gallery images={PHOTO_SET} /> */}
-                <Example images={PHOTO_SET}/>
-              </div>
+              <SectionTitle titleClass="section__title section__title--light" text="Lovely work." />
+              <Portfolio images={PHOTO_SET}/>
+              <Button className="button portfolio__button" title={"Show me more"}/>
             </div>
           </div>
         );

@@ -42,6 +42,7 @@ class ContentAbout extends React.Component {
                     number={(i < 10) ? "0"+(i+1) : i+1} 
                     title={item.title} 
                     text={item.text} 
+                    key={i}
                   />
               })
             }
