@@ -6,6 +6,9 @@ import SectionTitle from './sectionTitle.jsx';
 import ContentAbout from './contentAbout.jsx';
 import TeamItem from './teamItem.jsx';
 import Portfolio from './gallery.jsx';
+import Work from './work.jsx';
+import Features from './features.jsx';
+import Contact from './contact.jsx';
 import ParallaxContainer from './parallax.jsx';
 
 /* Section component */
@@ -75,9 +78,38 @@ class Section extends React.Component {
           </div>
         );
       }
+      /* WORK section */
+      case "section__work": return (
+        <div className={this.props.sectionClass}>
+          <div className="container">
+            <SectionTitle titleClass="section__title section__title--dark" text="What we do." />
+            <Work />
+          </div>
+        </div>
+      );
+      /* FEATURES section */
+      case "section__features": return (
+        <div className={this.props.sectionClass}>
+          <div className="container">
+            <SectionTitle titleClass="section__title section__title--light" text="Features." />
+            <Features />
+          </div>
+        </div>
+      );
+      /* CONTACT section */
+      case "section__contact": return (
+        <div className={this.props.sectionClass}>
+          <div className="container">
+            <SectionTitle titleClass="section__title section__title--dark" text="Stay in touch." />
+            {/* map */}
+            <Contact />
+          </div>
+        </div>
+      );
+      /* default section */
       default: return (
         <div className="section__content-wrapper">
-          <p style={{color:"#ed1c24", fontSize:24}}>Component not found...</p>
+          <p style={{color:"#ed1c24", fontSize:24}}>404 - Component not found...</p>
         </div>
       );
     }

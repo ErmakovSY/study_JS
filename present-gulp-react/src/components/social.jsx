@@ -4,7 +4,6 @@ import FontAwesome from 'react-fontawesome';
 /* Social-icons-block component */
 
 class Social extends React.Component {
-
   render() {
     let socialItems = this.props.items;
     return (

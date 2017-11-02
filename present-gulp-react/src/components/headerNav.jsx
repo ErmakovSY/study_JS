@@ -5,10 +5,13 @@ import React from 'react';
 class HeaderNav extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {activeItem: 0};
+    this.state = {
+      activeItem: 0
+    };
   }
   clickHandler(index, item) {
     this.setState({activeItem: index});
+    console.log(window.scrollY);
   }
   getClassesName(index) {
     let classes = {

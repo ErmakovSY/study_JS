@@ -1,0 +1,44 @@
+.section {
+  &__work {
+    background-color: $white;
+    .container {
+      padding: 80px 0;
+    }
+  }
+}
+.work {
+  &__wrapper {
+    flex-wrap: wrap;
+  }
+  &__item {
+    min-height: 300px;
+    width: calc((100% - 60px)/4);
+    margin-right: 20px;
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &:nth-of-type(4n + 4) {
+      margin-right: 0;
+    }
+  }
+  &__icon {
+    font-size: 50px;
+    line-height: 50px;
+    color: $cyan;
+    margin-bottom: 50px;
+  }
+  &__title {
+    @include font("Quattrocento Sans", 17px, 700, $darkGray);
+    text-transform: uppercase;
+    line-height: 17px;
+    margin-bottom: 25px;
+  }
+  &__text {
+    text-align: center;
+    font-size: 16px;
+    color: $lightGray;
+    line-height: 1.5;
+  }
+}
