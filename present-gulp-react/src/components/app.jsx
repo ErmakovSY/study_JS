@@ -11,6 +11,7 @@ class App extends React.Component {
         <Section sectionClass="section__main" />
         <Section sectionClass="section__about" />
         <Section sectionClass="section__team" />
+        <Section sectionClass="section__portfolio" />
      </div>
     );
   }

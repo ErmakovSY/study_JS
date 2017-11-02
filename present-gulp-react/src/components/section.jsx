@@ -4,6 +4,9 @@ import SliderBlock from './sliderBlock.jsx';
 import SectionTitle from './sectionTitle.jsx';
 import ContentAbout from './contentAbout.jsx';
 import TeamItem from './teamItem.jsx';
+// import Gallery from 'react-photo-gallery';
+import Example from './gallery.jsx';
+import ParallaxContainer from './parallax.jsx';
 
 /* Section component */
 
@@ -19,7 +22,7 @@ class Section extends React.Component {
       );
       /* ABOUT section */
       case "section__about": return (
-        <div className={this.props.sectionClass}>
+        <div id="about" className={this.props.sectionClass}>
           <div className="container">
             <SectionTitle titleClass="section__title section__title--dark" text="We are modest." />
             <div className="section__content-wrapper">
@@ -43,7 +46,7 @@ class Section extends React.Component {
         return (
           <div id="team" className={this.props.sectionClass}>
             <div className="container">
-              <SectionTitle titleClass="section__title section__title--dark" text="Our team" />
+              <SectionTitle titleClass="section__title section__title--dark" text="Meet the team." />
               <div className="section__content-wrapper">
                 <SliderBlock section="team" content={itemsInfo} />
               </div>
@@ -51,9 +54,32 @@ class Section extends React.Component {
           </div>
         );
       }
+      /* PORTFOLIO section */
+      case "section__portfolio": {
+        /* some photos */
+        const PHOTO_SET = [
+          {src: './img/portfolio-1.png', thumbnail: './img/portfolio-1.png', thumbnailWidth: 360, thumbnailHeight: 265},
+          {src: './img/portfolio-2.png', thumbnail: './img/portfolio-2.png', thumbnailWidth: 360, thumbnailHeight: 265},
+          {src: './img/portfolio-3.png', thumbnail: './img/portfolio-3.png', thumbnailWidth: 360, thumbnailHeight: 265},
+          {src: './img/portfolio-4.png', thumbnail: './img/portfolio-4.png', thumbnailWidth: 360, thumbnailHeight: 265},
+          {src: './img/portfolio-5.png', thumbnail: './img/portfolio-5.png', thumbnailWidth: 360, thumbnailHeight: 265},
+          {src: './img/portfolio-6.png', thumbnail: './img/portfolio-6.png', thumbnailWidth: 360, thumbnailHeight: 265},
+        ];
+        return (
+          <div id="portfolio" className={this.props.sectionClass}>
+            <div className="container">
+              <SectionTitle titleClass="section__title section__title--dark" text="Lovely work." />
+              <div className="section__content-wrapper">
+                {/* <Gallery images={PHOTO_SET} /> */}
+                <Example images={PHOTO_SET}/>
+              </div>
+            </div>
+          </div>
+        );
+      }
       default: return (
         <div className="section__content-wrapper">
-          <p>Component not found...</p>
+          <p style={{color:"#ed1c24", fontSize:24}}>Component not found...</p>
         </div>
       );
     }
