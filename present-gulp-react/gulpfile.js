@@ -17,7 +17,7 @@ const autoprefixer = require('gulp-autoprefixer');
 const sourcemaps = require('gulp-sourcemaps');
 
 /* Plugin for JS */
-const concat = require('gulp-concat');
+// const concat = require('gulp-concat');
 const minify = require('gulp-minify');
 
 /* Plugin for JSX */

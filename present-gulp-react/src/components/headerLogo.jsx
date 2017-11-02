@@ -1,5 +1,7 @@
 import React from 'react';
 
+/* Header logo component */
+
 class HeaderLogo extends React.Component {
   render() {
     return (

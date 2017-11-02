@@ -1,6 +1,8 @@
 import React from 'react';
 import Button from './button.jsx';
 
+/* Component for rendering content for each slide */
+
 class MainSlide extends React.Component {
   render() {
     switch (this.props.slideNumber) {

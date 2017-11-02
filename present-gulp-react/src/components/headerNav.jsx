@@ -1,5 +1,7 @@
 import React from 'react';
 
+/* Header navbar component */
+
 class HeaderNav extends React.Component {
   constructor(props) {
     super(props);

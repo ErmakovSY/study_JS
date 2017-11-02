@@ -1,5 +1,6 @@
 import React from 'react';
-//import  from '.';
+
+/* List with markers in About-section */
 
 class ListItem extends React.Component {
   render() {

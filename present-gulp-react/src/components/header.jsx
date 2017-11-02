@@ -2,6 +2,8 @@ import React from 'react';
 import HeaderLogo from './headerLogo.jsx';
 import HeaderNav from './headerNav.jsx';
 
+/* Header container component */
+
 class Header extends React.Component {
   render() {
     return (

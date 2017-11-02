@@ -1,23 +1,19 @@
 import React from 'react';
 import FontAwesome from 'react-fontawesome';
 
+/* Social-icons-block component */
+
 class Social extends React.Component {
 
   render() {
-    const socialItems = [
-      {brand: 'facebook', href: '#'}, 
-      {brand: 'twitter', href: '#'}, 
-      {brand: 'google', href: '#'}, 
-      {brand: 'dribbble', href: '#'}, 
-      {brand: 'behance', href: '#'}
-    ];
+    let socialItems = this.props.items;
     return (
-      <div className="social__wrapper">
+      <div className={this.props.className}>
         {
           socialItems.map((item) => {
             return <a className="social__link" href={item.href}>
-                <FontAwesome name={item.brand} />
-              </a> 
+                     <FontAwesome name={item.brand} />
+                  </a> 
           })
         }
       </div>

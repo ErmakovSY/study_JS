@@ -26,6 +26,7 @@
   &__content-wrapper {
     display: flex;
     width: 100%;
+    overflow: hidden;
   }
   &__content {
     display: flex;
@@ -61,15 +62,17 @@
   }
   &__link {
     display: flex;
-    width: 100%;
+    width: 60px;
+    height: 60px;
     background-color: $lightGray;
-    margin-right: 1px;
+    margin-right: 2px;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
     &:last-of-type {
       margin-right: 0;
     }
     span {
+      cursor: pointer;
       color: $white;
       font-size: 24px;
       margin: auto;
