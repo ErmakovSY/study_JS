@@ -1,19 +1,31 @@
 .section {
   &__team {
     .container {
-      padding: 80px 0;
+      padding: 80px 20px;
+      @media(max-width: 765px) {
+        padding: 30px 20px;
+      }
     }
   }
 }
 .team {
   &__slider {
     height: 450px;
+    width: 100%;
+    max-width: 1180px;
+    @media(min-width: 1400px) {
+      max-width: 1300px; 
+    }
     .slick-list {
-      max-width: 1140px;
+      width: 100%;
+      max-width: 1180px;
+      @media(min-width: 1400px) {
+        max-width: 1300px; 
+      }
     }
   }
   &__item {
-    width: 265px;
+    //width: 265px;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
     &:hover {
@@ -30,8 +42,10 @@
     }
   }
   &__image-wrapper {
-    width: 265px;
+    //width: 265px;
+    width: auto;
     height: 300px;
+    margin-right: 20px;
     position: relative;
   }
   &__dots {
@@ -62,6 +76,7 @@
   &__text {
     background-color: $lightGray;
     padding: 20px;
+    margin-right: 20px;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
     span {
@@ -73,9 +88,15 @@
     display: block;
     @include font("Quattrocento Sans", 22px, 700, $black);
     text-transform: uppercase;
+    @media(max-width: 1200px) {
+      font-size: 18px;
+    }
   }
   &__job {
     color: $gray;
+    @media(max-width: 1200px) {
+      font-size: 14px;
+    }
   }
   &__social {
     display: flex;

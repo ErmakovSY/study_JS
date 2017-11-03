@@ -26,6 +26,7 @@
     "react": "^15.0.1",
     "react-dom": "^15.0.1",
     "react-fontawesome": "^1.6.1",
+    "react-get-element": "^0.9.0",
     "react-google-maps": "^9.2.1",
     "react-grid-gallery": "^0.4.6",
     "react-parallax": "^1.5.0",

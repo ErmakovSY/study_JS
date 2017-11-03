@@ -17,7 +17,7 @@ class SliderBlock extends React.Component {
           slidesToShow: 1,
           slidesToScroll: 1,
           arrows: false,
-          dots: true
+          dots: true,
         };
         return(
           <Slider {...settings}>
@@ -47,6 +47,24 @@ class SliderBlock extends React.Component {
           arrows: false,
           dots: true,
           dotsClass: 'slick-dots team__dots',
+          responsive: [{
+            breakpoint: 980,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 1
+            }
+          }, {
+            breakpoint: 720,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 1
+            }
+          }, {
+            breakpoint: 500,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1
+            }}]
         };
         let items = this.props.content;
         return (

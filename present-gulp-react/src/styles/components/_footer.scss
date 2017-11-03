@@ -1,11 +1,16 @@
 .footer {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
   background-color: $bg-header;
+  .container {
+    padding: 0 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
   &__copy {
-
+    @media(max-width: 765px) {
+      font-size: 12px;
+    }
   }
   &__social {
     display: flex;
@@ -15,12 +20,21 @@
       transition: all 0.3s ease-in-out;
       span {
         transition: all 0.3s ease-in-out;
+        @media(max-width: 765px) {
+          font-size: 18px;
+        }
       }
       &:hover {
         background-color: $trp;
         span {
           color: $cyan;
         }
+      }
+      @media(max-width: 450px) {
+        width: 30px;
+      }
+      @media(max-width: 350px) {
+        width: 25px;
       }
     }
   }

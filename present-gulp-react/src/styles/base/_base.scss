@@ -5,9 +5,12 @@ body {
 .container {
   height: 100%;
   width: 100%;
-  max-width: 1140px; 
+  max-width: 1180px; 
   margin: 0 auto;
   padding: 0 20px;
+  @media(min-width: 1400px) {
+    max-width: 1300px; 
+  }
 }
 .image {
   display: block;
@@ -43,10 +46,13 @@ body {
         margin-bottom: 0;
       }
     }
+    @media(max-width: 700px) {
+      justify-content: center;
+    }
   }
   &__up {
     position: fixed;
-    bottom: 20px;
+    bottom: 75px;
     right: -75px;
     width: 40px;
     height: 40px;

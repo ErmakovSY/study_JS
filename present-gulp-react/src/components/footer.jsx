@@ -14,8 +14,10 @@ class Footer extends React.Component {
 
     return (
       <footer className="footer">
-        <p className="footer__copy">© Copyright 2017 by PSD Booster. All Rights Reserved.</p>
-        <Social items={socialItems} className="footer__social" />
+        <div className="container">
+          <p className="footer__copy">© Copyright 2017 by PSD Booster. All Rights Reserved.</p>
+          <Social items={socialItems} className="footer__social" />
+        </div>
       </footer>
     );
   }
