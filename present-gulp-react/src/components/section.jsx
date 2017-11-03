@@ -9,6 +9,8 @@ import Portfolio from './gallery.jsx';
 import Work from './work.jsx';
 import Features from './features.jsx';
 import Contact from './contact.jsx';
+import MapFancy from './map.jsx';
+import Footer from './footer.jsx';
 import ParallaxContainer from './parallax.jsx';
 
 /* Section component */
@@ -18,14 +20,14 @@ class Section extends React.Component {
     switch (this.props.sectionClass) {
       /* MAIN section */
       case "section__main": return (
-        <div className={this.props.sectionClass}>
+        <div className={this.props.sectionClass} ref="main">
           <Header />
           <SliderBlock section="main" />
         </div>
       );
       /* ABOUT section */
       case "section__about": return (
-        <div className={this.props.sectionClass}>
+        <div className={this.props.sectionClass} ref="about">
           <div className="container">
             <SectionTitle titleClass="section__title section__title--dark" text="We are modest." />
             <div className="section__content-wrapper">
@@ -47,7 +49,7 @@ class Section extends React.Component {
           {image: './img/team-2.png', name: "Bruce Grand", job: "Sales Manager", social: [{brand: 'twitter', href: '#'}, {brand: 'pinterest', href: '#'}, {brand: 'facebook', href: '#'}]},
         ];
         return (
-          <div className={this.props.sectionClass}>
+          <div className={this.props.sectionClass} ref="team">
             <div className="container">
               <SectionTitle titleClass="section__title section__title--dark" text="Meet the team." />
               <div className="section__content-wrapper">
@@ -69,7 +71,7 @@ class Section extends React.Component {
           {src: './img/portfolio-6.png', thumbnail: './img/portfolio-6.png', thumbnailWidth: 360, thumbnailHeight: 265},
         ];
         return (
-          <div className={this.props.sectionClass}>
+          <div className={this.props.sectionClass} ref="portfolio">
             <div className="container">
               <SectionTitle titleClass="section__title section__title--light" text="Lovely work." />
               <Portfolio images={PHOTO_SET}/>
@@ -80,7 +82,7 @@ class Section extends React.Component {
       }
       /* WORK section */
       case "section__work": return (
-        <div className={this.props.sectionClass}>
+        <div className={this.props.sectionClass} ref="work">
           <div className="container">
             <SectionTitle titleClass="section__title section__title--dark" text="What we do." />
             <Work />
@@ -89,7 +91,7 @@ class Section extends React.Component {
       );
       /* FEATURES section */
       case "section__features": return (
-        <div className={this.props.sectionClass}>
+        <div className={this.props.sectionClass} ref="features">
           <div className="container">
             <SectionTitle titleClass="section__title section__title--light" text="Features." />
             <Features />
@@ -98,12 +100,15 @@ class Section extends React.Component {
       );
       /* CONTACT section */
       case "section__contact": return (
-        <div className={this.props.sectionClass}>
+        <div className={this.props.sectionClass} ref="contact">
           <div className="container">
-            <SectionTitle titleClass="section__title section__title--dark" text="Stay in touch." />
-            {/* map */}
+            <SectionTitle titleClass="section__title section__title--dark contact__maintitle" text="Stay in touch." />
+          </div>
+            <MapFancy />
+          <div className="container">
             <Contact />
           </div>
+          <Footer />
         </div>
       );
       /* default section */

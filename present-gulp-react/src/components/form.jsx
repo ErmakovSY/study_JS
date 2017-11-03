@@ -7,9 +7,9 @@ class Form extends React.Component {
   render() {
     return (
       <form className="contact__form">
-        <Input placeholder="Enter Your Name" />
-        <Input placeholder="Enter Your Email" />
-        <Textarea placeholder="Enter Your Message" />
+        <Input placeholder="Name..." />
+        <Input placeholder="Email..." />
+        <Textarea placeholder="Message..." />
         <Button className="button contact__button" title={"Send message"}/>
       </form>
     );

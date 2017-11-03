@@ -29,12 +29,12 @@ class Header extends React.Component {
   }
   render() {
     return (
-      <div className={this.getClassesName()} >
+      <header className={this.getClassesName()} >
         <div className="container header__container">
           <HeaderLogo />
           <HeaderNav />
         </div>
-      </div>
+      </header>
     );
   }
 }

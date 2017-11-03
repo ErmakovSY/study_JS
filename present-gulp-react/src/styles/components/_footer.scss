@@ -1,0 +1,27 @@
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $bg-header;
+  &__copy {
+
+  }
+  &__social {
+    display: flex;
+    flex-direction: row;
+    a {
+      background-color: $trp;
+      transition: all 0.3s ease-in-out;
+      span {
+        transition: all 0.3s ease-in-out;
+      }
+      &:hover {
+        background-color: $trp;
+        span {
+          color: $cyan;
+        }
+      }
+    }
+  }
+}
