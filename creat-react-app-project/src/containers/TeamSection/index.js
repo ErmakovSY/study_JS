@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import SectionTitle from './../../components/sectionTitle.jsx';
-import SliderBlock from './../../components/sliderBlock.jsx';
-import './main.css';
+import SliderTeam from './../../components/sliderTeam.jsx';
+import './main.scss';
 
 export default class Team extends Component {
   render() {

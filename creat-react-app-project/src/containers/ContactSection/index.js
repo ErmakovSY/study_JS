@@ -3,7 +3,7 @@ import SectionTitle from './../../components/sectionTitle.jsx';
 import MapFancy from './../../components/map.jsx';
 import Form from './../../components/form.jsx';
 import Footer from './../../components/footer.jsx';
-import './main.css';
+import './main.scss';
 
 export default class Contact extends Component {
   render() {

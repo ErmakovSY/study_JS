@@ -1,0 +1,86 @@
+body {
+  width: 100%;
+  @include font("Open Sans", 14, 400, $white)
+}
+.container {
+  height: 100%;
+  width: 100%;
+  max-width: 1180px; 
+  margin: 0 auto;
+  padding: 0 20px;
+  @media(min-width: 1400px) {
+    max-width: 1300px; 
+  }
+}
+.image {
+  display: block;
+  height: auto;
+  max-width: 100%;
+  @supports (object-fit: cover) {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+.button {
+  @include button-1(124px, $trp, $white, $cyan, $cyan);
+  @include font("Open Sans", 14, 600, $white);
+  text-transform: uppercase;
+  &__wrapper {
+    display: flex;
+    &--horizontal {
+      flex-direction: row;
+      &>button {
+        margin-right: 10px;
+      }
+      &>button:last-of-type {
+        margin-right: 0;
+      }
+    }
+    &--vertical {
+      flex-direction: column;
+      &>button {
+        margin-bottom: 10px;
+      }
+      &>button:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+    @media(max-width: 700px) {
+      justify-content: center;
+    }
+  }
+  &__up {
+    position: fixed;
+    bottom: 75px;
+    right: -75px;
+    width: 40px;
+    height: 40px;
+    border: 2px solid $black;
+    border-radius: 6px;
+    background-color: $trp;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+    span {
+      font-size: 36px;
+      font-weight: bold;
+      color: $black;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      opacity: 0.6;
+    }
+    &:hover {
+      opacity: 1;
+      span {
+        opacity: 1;
+      }
+    }
+    &--toggled {
+      right: 20px;
+      opacity: 0.6;
+    }
+  }
+}

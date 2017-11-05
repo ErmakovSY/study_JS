@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import SectionTitle from './../../components/sectionTitle.jsx';
 import Social from './../../components/social.jsx';
 import ListItem from './../../components/listItem.jsx';
-import './main.css';
+import './main.scss';
 
 export default class About extends Component {
   render() {
@@ -56,7 +56,7 @@ export default class About extends Component {
             </div>
             <div className="section__content section__content--right">
               {
-                list.map((item) => {
+                list.map((item, i) => {
                   return (
                     <ListItem 
                       number={ (i < 10) ? "0" + (i + 1) : i + 1 } 

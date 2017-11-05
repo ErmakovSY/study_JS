@@ -10,7 +10,10 @@ export default class Form extends Component {
         <Input placeholder="Name..." />
         <Input placeholder="Email..." />
         <Textarea placeholder="Message..." />
-        <Button className="button contact__button" title={"Send message"}/>
+        <Button 
+          className="button contact__button" 
+          title="Send message"
+        />
       </form>
     )
   }

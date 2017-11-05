@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import SectionTitle from './../../components/sectionTitle.jsx';
 import FontAwesome from 'react-fontawesome';
-import './main.css';
+import './main.scss';
 
 export default class Work extends Component {
   render() {
@@ -20,9 +21,9 @@ export default class Work extends Component {
           <SectionTitle titleClass="section__title section__title--dark" text="What we do." />
           <div className="section__content-wrapper work__wrapper">
             {
-              items.map((item) => {
+              items.map((item, i) => {
                 return (
-                  <div className="work__item" key={item.title}>
+                  <div className="work__item" key={i}>
                     <p className="work__icon"><FontAwesome name={item.icon} /></p>
                     <p className="work__title">{item.title}</p>
                     <p className="work__text">{item.text}</p>

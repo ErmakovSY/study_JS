@@ -1,19 +1,38 @@
 import React, { Component } from 'react';
 import FontAwesome from 'react-fontawesome';
+import classNames from 'classnames';
 
 /* Header container component */
 
 const menuItems = [
   {
     title: 'Home', 
-    href: '#home'
+    href: '#section_main'
   }, 
-  {title: "About", href: "#about"}, 
-  {title: "Team", href: "#team"}, 
-  {title: "Features", href: "#portfolio"},
-  {title: "Work", href: "#work"}, 
-  {title: "Services", href: "#services"},
-  {title: "Contact", href: "#contact"}
+  {
+    title: "About", 
+    href: "#section_about"
+  }, 
+  {
+    title: "Team", 
+    href: "#section_team"
+  }, 
+  {
+    title: "Portfolio", 
+    href: "#section_portfolio"
+  },
+  {
+    title: "Work", 
+    href: "#section_work"
+  }, 
+  {
+    title: "Features", 
+    href: "#section_features"
+  },
+  {
+    title: "Contact", 
+    href: "#section_contact"
+  }
 ];
 
 export default class Header extends Component {
@@ -31,33 +50,33 @@ export default class Header extends Component {
     window.removeEventListener('scroll', this.scrollHandler.bind(this));
   }
   scrollHandler() {
-    this.setState({onTop: (window.scrollY ? 0 : 1)});
+    this.setState({ onTop: (window.scrollY ? 0 : 1) });
   }
   clickHandler(index, item) {
-    this.setState({activeItem: index});
-    this.props.getActive(index);
-    this.props.scrollAnchor(index);
+    this.setState({ activeItem: index });
   }
   render() {
     return (
-      <header className={this.getHeaderClassesName()} >
+      <header className="header" >
         <div className="container header__container">
           <div className="header__logo">
-            <img className="image" src={'./img/header-logo.png'} alt="Logo" />
+            <img 
+              className="image" 
+              src='./img/header-logo.png' 
+              alt="Logo" 
+            />
           </div>
           <p 
             className="header__button" 
-            onClick={this.clickToggler.bind(this)} 
           >
             <FontAwesome name="navicon" />
           </p>
-          <div className={this.getTogglerClassesName()}>
+          <div className="header__nav">
             {
               menuItems.map((item, i) => {
                 return (
                   <a 
-                    className={this.getNavClassesName(i)}
-                    onClick={this.clickHandler.bind(this, i, item)} 
+                    className="header__item"
                     href={item.href}
                     key={item.title}
                   >

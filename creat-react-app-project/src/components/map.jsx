@@ -48,4 +48,3 @@ export default class MapFancy extends React.PureComponent {
     )
   }
 }
-export default MapFancy;

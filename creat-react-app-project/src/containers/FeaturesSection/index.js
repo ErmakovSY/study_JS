@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import SectionTitle from './../../components/sectionTitle.jsx';
-import './main.css';
+import './main.scss';
 
 export default class Features extends Component {
   render() {

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import SectionTitle from './../../components/sectionTitle.jsx';
 import GalleryFancy from './../../components/gallery.jsx';
 import Button from './../../components/button.jsx';
-import './main.css';
+import './main.scss';
 
 export default class Portfolio extends Component {
   render() {

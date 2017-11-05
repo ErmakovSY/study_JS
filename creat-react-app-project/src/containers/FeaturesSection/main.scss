@@ -1,0 +1,63 @@
+@import './../../assets/styles/main.scss';
+
+.section {
+  &__features {
+    background-color: $gray;
+    .container {
+      padding: 80px 20px;
+      @media(max-width: 765px) {
+        padding: 30px 20px;
+      }
+    }
+  }
+}
+.features {
+  &__wrapper {
+    flex-wrap: wrap;
+    @media(max-width: 765px) {
+      flex-direction: column;
+    }
+  }
+  &__item {
+    min-height: 300px;
+    width: calc((100% - 60px)/3);
+    margin-right: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    &:nth-of-type(3n + 3) {
+      margin-right: 0;
+    }
+    @media(max-width: 765px) {
+      width: 100%;
+      margin-right: 0;
+    }
+  }
+  &__image {
+    width: 100%;
+    max-width: 400px;
+    overflow: hidden;
+    margin: 0 auto 50px;
+    @media(max-width: 765px) {
+      margin-bottom: 25px;
+    }
+  }
+  &__title {
+    @include font("Quattrocento Sans", 18px, 700, $white);
+    text-transform: uppercase;
+    line-height: 17px;
+    margin-bottom: 25px;
+    @media(max-width: 765px) {
+      margin-bottom: 5px;
+    }
+  }
+  &__text {
+    font-size: 16px;
+    color: $white;
+    line-height: 1.5;
+    @media(max-width: 765px) {
+      margin-bottom: 25px;
+    }
+  }
+}

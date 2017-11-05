@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Header from './../../components/header.jsx';
 import SliderMain from './../../components/sliderMain.jsx';
-import './main.css';
+import './main.scss';
 
 export default class Main extends Component {
   render() {

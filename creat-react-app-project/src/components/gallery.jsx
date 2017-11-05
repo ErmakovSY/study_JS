@@ -19,11 +19,11 @@ export default class GalleryFancy extends Component {
 					overflow: "auto"}}
 			>
 				<Gallery 
-					images={this.state.images} 
-					enableImageSelection={false}
-					backdropClosesModal={true} 
-					margin={15}
-					rowHeight={265}
+					images={ this.state.images } 
+					enableImageSelection={ false }
+					backdropClosesModal={ true } 
+					margin={ 15 }
+					rowHeight={ 265 }
 				/>
 			</div>
     )
