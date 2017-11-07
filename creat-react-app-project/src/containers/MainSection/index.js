@@ -7,7 +7,7 @@ import './main.scss';
 export default class Main extends Component {
   render() {
     return (
-      <div className="section__main" name="section_main">
+      <div className="section section__main" name="section_main">
         <Header 
           setActive={ this.props.setActive }
         />

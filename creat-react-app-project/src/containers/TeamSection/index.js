@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ScrollAnimation from 'react-animate-on-scroll';
+import { Fade, Flip, Rotate, Zoom } from 'react-reveal';
 import SectionTitle from './../../components/sectionTitle.jsx';
 import SliderTeam from './../../components/sliderTeam.jsx';
 import './main.scss';
@@ -99,21 +99,16 @@ export default class Team extends Component {
       },
     ];
     return (
-      <div className="section__team" name="section_team">
+      <div className="section section__team" name="section_team">
         <div className="container">
-          <ScrollAnimation 
-            animateIn="fadeInRight"
-          >
+          <Fade right big duration={ 400 }>
             <SectionTitle titleClass="section__title section__title--dark" text="Meet the team." />
-          </ScrollAnimation>
-          <ScrollAnimation 
-            animateIn="fadeInLeft"
-            offset={ 50 }
-          >
+          </Fade>
+          <Zoom>
             <div className="section__content-wrapper">
               <SliderTeam content={itemsInfo} />
             </div>
-          </ScrollAnimation>
+          </Zoom>
         </div>
       </div>
     )

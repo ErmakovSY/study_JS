@@ -12,15 +12,14 @@ body {
     max-width: 1300px; 
   }
 }
+.section {
+  overflow: hidden;
+}
 .image {
   display: block;
-  height: auto;
-  max-width: 100%;
-  @supports (object-fit: cover) {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-  }
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 .button {
   @include button-1(124px, $trp, $white, $cyan, $cyan);
@@ -82,5 +81,28 @@ body {
       right: 20px;
       opacity: 0.6;
     }
+  }
+}
+.checkbox {
+  &__input {
+    margin-left: 20px;
+    cursor: pointer;
+  }
+  &__label {
+    align-self: flex-start;
+    color: $gray;
+    line-height: 45px;
+    cursor: pointer;
+  }
+}
+.preloader {
+  &__block {
+    height: 100vh;
+    display: flex;
+  }
+  &__image-wrapper {
+    width: 100px;
+    height: 100px;
+    margin: auto;
   }
 }

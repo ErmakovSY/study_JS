@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Fade, Flip, Rotate, Zoom } from 'react-reveal';
 import Social from './social.jsx';
 
 let socialItems = [
@@ -29,13 +30,17 @@ export default class Footer extends Component {
     return (
       <footer className="footer">
         <div className="container">
-          <p className="footer__copy">
-            © Copyright 2017 by PSD Booster. All Rights Reserved.
-          </p>
-          <Social 
-            items={socialItems} 
-            className="footer__social" 
-          />
+          <Fade left delay={ 500 }>
+            <p className="footer__copy">
+              © Copyright 2017 by PSD Booster. All Rights Reserved.
+            </p>
+          </Fade>
+          <Fade right delay={ 500 }>
+            <Social 
+              items={socialItems} 
+              className="footer__social" 
+            />
+          </Fade>
         </div>
       </footer>
     )

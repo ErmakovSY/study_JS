@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ScrollAnimation from 'react-animate-on-scroll';
+import { Fade, Flip, Rotate, Zoom } from 'react-reveal';
 import SectionTitle from './../../components/sectionTitle.jsx';
 import GalleryFancy from './../../components/gallery.jsx';
 import Button from './../../components/button.jsx';
@@ -46,20 +46,15 @@ export default class Portfolio extends Component {
       },
     ];
     return (
-      <div className="section__portfolio" name="section_portfolio">
+      <div className="section section__portfolio" name="section_portfolio">
         <div className="container">
-          <ScrollAnimation 
-            animateIn="fadeInRight"
-          >
+          <Fade right big duration={ 400 }>
             <SectionTitle titleClass="section__title section__title--light portfolio__maintitle animated" text="Lovely work." />
-          </ScrollAnimation>
-          <ScrollAnimation 
-            animateIn="fadeInLeft"
-            offset={ 50 }
-          >
+          </Fade>
+          <Zoom>
             <GalleryFancy images={photoSet}/>
             <Button className="button portfolio__button" title={"Show me more"}/>
-          </ScrollAnimation>
+          </Zoom>
         </div>
       </div>
     )
