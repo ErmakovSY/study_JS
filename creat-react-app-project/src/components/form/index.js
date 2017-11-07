@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
-import Input from './input.jsx';
-import Textarea from './textarea.jsx';
-import Button from './button.jsx';
-import Checkbox from './checkbox.jsx';
+import Input from './../input';
+import Textarea from './../textarea';
+import Button from './../button';
+import Checkbox from './../checkbox';
 
 export default class Form extends Component {
+  checkHandler() {
+    //handle checkbox events
+  }
   render() {
     return (
       <form className="contact__form">
@@ -17,7 +20,7 @@ export default class Form extends Component {
         />
         <Checkbox 
           title="Send me last news"
-          check="false"
+          check={this.checkHandler}
         />
       </form>
     )

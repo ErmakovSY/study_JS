@@ -1,27 +1,31 @@
 import React, { Component } from 'react';
-import Main from './../MainSection/index.js';
-import About from './../AboutSection/index.js';
-import Team from './../TeamSection/index.js';
-import Portfolio from './../PortfolioSection/index.js';
-import Work from './../WorkSection/index.js';
-import Features from './../FeaturesSection/index.js';
-import Contact from './../ContactSection/index.js';
+import Scroll from 'react-scroll';
+import Main from './../MainSection';
+import About from './../AboutSection';
+import Team from './../TeamSection';
+import Portfolio from './../PortfolioSection';
+import Work from './../WorkSection';
+import Features from './../FeaturesSection';
+import Contact from './../ContactSection';
 import './main.scss';
-import Scroll from 'react-scroll'; // Imports all Mixins
-import PreloaderIcon, {ICON_TYPE} from 'react-preloader-icon';
 
-let Events     = Scroll.Events;
-let scrollSpy  = Scroll.scrollSpy;
+let Events = Scroll.Events;
+let scrollSpy = Scroll.scrollSpy;
 
 export default class HomePage extends Component {
   constructor(props) {
     super(props);
     this.state = {
       loading: true
-    };
+    }
   }
   componentDidMount() {
-    setTimeout(() => this.setState({ loading: false }), 2500); // simulates loading of data
+    setTimeout(() => 
+      this.setState({ 
+        loading: false 
+      }),
+    2000); // simulates loading of data
+
     Events.scrollEvent.register('begin', (to, element) => {
       // console.log("begin", arguments);
     });
@@ -36,7 +40,7 @@ export default class HomePage extends Component {
   }
   render() {
     let loading = this.state.loading;
-    if(loading) { // if your app get render immediately, remove this block 
+    if (loading) { // if your app get render immediately, remove this block 
       return (
         <div className="preloader__block">
           <div className="preloader__image-wrapper">

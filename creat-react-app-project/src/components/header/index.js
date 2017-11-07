@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import FontAwesome from 'react-fontawesome';
 import classNames from 'classnames';
 import { Fade, Flip, Rotate, Zoom } from 'react-reveal';
-
 import Scroll from 'react-scroll';
+
 let Link = Scroll.Link;
-let menuItems = [
+const MENU_ITEMS = [
   {
     title: 'Home', 
     href: 'section_main'
@@ -39,24 +39,31 @@ let menuItems = [
 export default class Header extends Component {
   constructor(props) {
     super(props);
+    this.togglerClickHandler = this.togglerClickHandler.bind(this);
+    this.scrollHandler = this.scrollHandler.bind(this)
     this.state = {
       onTop: true,
       showNav: false
     }
   }
   componentDidMount() {
-    window.addEventListener('scroll', this.scrollHandler.bind(this));
-    this.setState({ showNav: (window.innerWidth < 651) ? false : true });
+    window.addEventListener('scroll', this.scrollHandler);
+    this.setState({ 
+      showNav: (window.innerWidth < 651) ? false : true 
+    });
   }
   componentWillUnmount() {
-    window.removeEventListener('scroll', this.scrollHandler.bind(this));
+    window.removeEventListener('scroll', this.scrollHandler);
   }
   scrollHandler() {
-    this.setState({ onTop: (window.scrollY ? false : true) });
-    // this.setState({ showNav: (window.innerWidth < 651) ? false : true });
+    this.setState({ 
+      onTop: (window.scrollY ? false : true) 
+    });
   }
   togglerClickHandler() {
-    this.setState({ showNav: !this.state.showNav });
+    this.setState({ 
+      showNav: !this.state.showNav 
+    });
   }
   render() {
     let headerClass = classNames({
@@ -68,9 +75,9 @@ export default class Header extends Component {
       'header__nav header__nav--hidden': !this.state.showNav
     });
     return (
-      <header className={ headerClass }>
+      <header className={headerClass}>
         <div className="container header__container">
-          <Fade left delay={ 800 }>
+          <Fade left delay={800}>
             <div className="header__logo">
               <img 
                 className="image" 
@@ -81,29 +88,27 @@ export default class Header extends Component {
           </Fade>
           <p 
             className="header__button"
-            onClick={this.togglerClickHandler.bind(this)}
+            onClick={this.togglerClickHandler}
           >
             <FontAwesome name="navicon" />
           </p>
-          <Fade right delay={ 800 }>
-            <div className={ navClass }>
+          <Fade right delay={800}>
+            <div className={navClass}>
               {
-                menuItems.map((item, i) => {
-                  return (
-                    <Link 
-                      className="header__item"
-                      activeClass="header__item--active" 
-                      to={ item.href } 
-                      spy={ true } 
-                      smooth={ true } 
-                      offset={ 0 } 
-                      duration={ 500 } 
-                      key={ item.title }
-                    >
-                      { item.title }
-                    </Link>
-                  )
-                })
+                MENU_ITEMS.map(item => 
+                  <Link 
+                    className="header__item"
+                    activeClass="header__item--active" 
+                    to={item.href} 
+                    spy={true} 
+                    smooth={true} 
+                    offset={0} 
+                    duration={500} 
+                    key={item.title}
+                  >
+                    {item.title}
+                  </Link>
+                )
               }
             </div>
           </Fade>

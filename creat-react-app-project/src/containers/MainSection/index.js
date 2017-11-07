@@ -1,18 +1,16 @@
 import React, { Component } from 'react';
-import Header from './../../components/header.jsx';
-import TheContainer from './../../components/parallax.jsx';
-// import SliderMain from './../../components/sliderMain.jsx';
+import Header from './../../components/header';
+import ParalaxMain from './../../components/parallax';
 import './main.scss';
 
-export default class Main extends Component {
-  render() {
-    return (
-      <div className="section section__main" name="section_main">
-        <Header 
-          setActive={ this.props.setActive }
-        />
-        <TheContainer />
-      </div>
-    )
-  }
-}
+const Main = () => (
+  <div
+    className="section section__main" 
+    name="section_main"
+  >
+    <Header />
+    <ParalaxMain />
+  </div>
+)
+
+export default Main;
