@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ScrollAnimation from 'react-animate-on-scroll';
 import SectionTitle from './../../components/sectionTitle.jsx';
 import Social from './../../components/social.jsx';
 import ListItem from './../../components/listItem.jsx';
@@ -43,32 +44,42 @@ export default class About extends Component {
       }
     ];
     return (
-      <div className="section__about" ref={"about"}>
+      <div className="section__about" name="section_about">
         <div className="container">
-          <SectionTitle titleClass="section__title section__title--dark" text="We are modest." />
-          <div className="section__content-wrapper about__content">
-            <div className="section__content section__content--left">
-              <p className="section__text">
-                <span>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nisi metus, tristique ndolor non, ornare sagittis dolor. Nulla vestibulu lacus sed molestie gravida. Crferm entum  quismagna congue, vel sodales arcu vestibulum. Nunc lobortis dui magna, quis lacusullamcorper at."</span>
-                <span>"Phasellus sollicitudin ante eros ornare, "<b>"sit amet luctus lorem semper"</b>". Suspendisse posuere, quamdictum consectetur, augue metus pharetra tellus, eu feugiatloreg egetnisi. Cras ornare bibendum ante, ut bibendum odio convallis eget. vel sodales arcu vestibulum"</span>
-              </p>
-              <Social items={socialItems} className="social__wrapper" />
+          <ScrollAnimation 
+            animateIn="fadeInRight"
+            offset={ 50 }
+          >
+            <SectionTitle titleClass="section__title section__title--dark" text="We are modest." />
+          </ScrollAnimation>
+          <ScrollAnimation 
+            animateIn="fadeInLeft"
+            offset={ 50 }
+          >
+            <div className="section__content-wrapper about__content">
+              <div className="section__content section__content--left">
+                <p className="section__text">
+                  <span>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nisi metus, tristique ndolor non, ornare sagittis dolor. Nulla vestibulu lacus sed molestie gravida. Crferm entum  quismagna congue, vel sodales arcu vestibulum. Nunc lobortis dui magna, quis lacusullamcorper at."</span>
+                  <span>"Phasellus sollicitudin ante eros ornare, "<b>"sit amet luctus lorem semper"</b>". Suspendisse posuere, quamdictum consectetur, augue metus pharetra tellus, eu feugiatloreg egetnisi. Cras ornare bibendum ante, ut bibendum odio convallis eget. vel sodales arcu vestibulum"</span>
+                </p>
+                <Social items={socialItems} className="social__wrapper" />
+              </div>
+              <div className="section__content section__content--right">
+                {
+                  list.map((item, i) => {
+                    return (
+                      <ListItem 
+                        number={ (i < 10) ? "0" + (i + 1) : i + 1 } 
+                        title={ item.title } 
+                        text={ item.text } 
+                        key={ item.title }
+                      />
+                    );
+                  })
+                }
+              </div>
             </div>
-            <div className="section__content section__content--right">
-              {
-                list.map((item, i) => {
-                  return (
-                    <ListItem 
-                      number={ (i < 10) ? "0" + (i + 1) : i + 1 } 
-                      title={ item.title } 
-                      text={ item.text } 
-                      key={ item.title }
-                    />
-                  );
-                })
-              }
-            </div>
-          </div>
+          </ScrollAnimation>
         </div>
       </div>
     )

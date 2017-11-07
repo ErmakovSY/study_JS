@@ -1,23 +1,22 @@
 import React, { Component } from 'react';
-import { Parallax, Background } from 'react-parallax';
+import { Parallax } from 'react-parallax';
+import Button from './../components/button.jsx';
 
-export default class ParallaxContainer extends Component{
+export default class TheContainer extends Component {
   render() {
     return (
-      <div>
-        <Parallax strength={300}>
-          <Background>
-            <img src="http://www.fillmurray.com/400/300"/>
-            <div style={{
-               width: 800, 
-               height: 300, 
-               backgroundColor: '#450093'
-              }}></div>
-            <img src="http://www.fillmurray.com/500/300"/>
-          </Background>
-          <h1>something else</h1>
-        </Parallax>
-      </div>
+      <Parallax bgImage="./img/main-bg.jpg" strength={300}>
+        <div className="main__parallax-wrapper">
+          <div className="main__content-wrapper container">
+            <p className="main__title">Welcome to our Marketplace</p>
+            <p className="main__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nisi metus, tristique ndolor non, ornare sagittis dolor. Nulla vestibulu lacus ...</p>
+            <div className="button__wrapper button__wrapper--horizontal">
+              <Button className="button main__button" title={"View more"}/>
+              <Button className="button main__button" title={"Video tour"}/>
+            </div>
+          </div>
+        </div>
+      </Parallax>
     )
   }
 }

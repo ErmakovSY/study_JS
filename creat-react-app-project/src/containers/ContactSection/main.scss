@@ -3,6 +3,7 @@
 .section {
   &__contact {
     background-color: $white;
+    position: relative;
     .container {
       padding: 80px 20px;
       &:first-child {

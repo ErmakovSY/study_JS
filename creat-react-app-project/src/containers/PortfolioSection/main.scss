@@ -2,6 +2,7 @@
 
 .section {
   &__portfolio {
+    position: relative;
     background-color: $gray;
     .container {
       padding: 80px 20px;

@@ -2,36 +2,36 @@ import React, { Component } from 'react';
 import FontAwesome from 'react-fontawesome';
 import classNames from 'classnames';
 
-/* Header container component */
-
-const menuItems = [
+import Scroll from 'react-scroll';
+let Link = Scroll.Link;
+let menuItems = [
   {
     title: 'Home', 
-    href: '#section_main'
+    href: 'section_main'
   }, 
   {
     title: "About", 
-    href: "#section_about"
+    href: "section_about"
   }, 
   {
     title: "Team", 
-    href: "#section_team"
+    href: "section_team"
   }, 
   {
     title: "Portfolio", 
-    href: "#section_portfolio"
+    href: "section_portfolio"
   },
   {
     title: "Work", 
-    href: "#section_work"
+    href: "section_work"
   }, 
   {
     title: "Features", 
-    href: "#section_features"
+    href: "section_features"
   },
   {
     title: "Contact", 
-    href: "#section_contact"
+    href: "section_contact"
   }
 ];
 
@@ -39,25 +39,35 @@ export default class Header extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      onTop: 1,
-      activeItem: this.props.activeItem
+      onTop: true,
+      showNav: false
     }
   }
   componentDidMount() {
     window.addEventListener('scroll', this.scrollHandler.bind(this));
+    this.setState({ showNav: (window.innerWidth < 651) ? false : true });
   }
   componentWillUnmount() {
     window.removeEventListener('scroll', this.scrollHandler.bind(this));
   }
   scrollHandler() {
-    this.setState({ onTop: (window.scrollY ? 0 : 1) });
+    this.setState({ onTop: (window.scrollY ? false : true) });
+    //this.setState({ showNav: (window.innerWidth < 651) ? false : true });
   }
-  clickHandler(index, item) {
-    this.setState({ activeItem: index });
+  togglerClickHandler() {
+    this.setState({ showNav: !this.state.showNav });
   }
   render() {
+    let headerClass = classNames({
+      'header': this.state.onTop,
+      'header header--sticky': !this.state.onTop
+    });
+    let navClass = classNames({
+      'header__nav': this.state.showNav,
+      'header__nav header__nav--hidden': !this.state.showNav
+    });
     return (
-      <header className="header" >
+      <header className={ headerClass }>
         <div className="container header__container">
           <div className="header__logo">
             <img 
@@ -67,21 +77,27 @@ export default class Header extends Component {
             />
           </div>
           <p 
-            className="header__button" 
+            className="header__button"
+            onClick={this.togglerClickHandler.bind(this)}
           >
             <FontAwesome name="navicon" />
           </p>
-          <div className="header__nav">
+          <div className={ navClass }>
             {
               menuItems.map((item, i) => {
                 return (
-                  <a 
+                  <Link 
                     className="header__item"
-                    href={item.href}
-                    key={item.title}
+                    activeClass="header__item--active" 
+                    to={ item.href } 
+                    spy={ true } 
+                    smooth={ true } 
+                    offset={ 0 } 
+                    duration={ 500 } 
+                    key={ item.title }
                   >
-                    {item.title}
-                  </a> 
+                    { item.title }
+                  </Link>
                 )
               })
             }

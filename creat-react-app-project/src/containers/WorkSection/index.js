@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import SectionTitle from './../../components/sectionTitle.jsx';
+import ScrollAnimation from 'react-animate-on-scroll';
 import FontAwesome from 'react-fontawesome';
+import SectionTitle from './../../components/sectionTitle.jsx';
 import './main.scss';
 
 export default class Work extends Component {
@@ -16,22 +17,31 @@ export default class Work extends Component {
       {icon: "clock-o", title: "24/7 support", text: "Nunc mattis lorem in leo lobortis, ut venenatis justo commodo. Maecenas a justo nec velit egestas fermentum."}
     ];
     return (
-      <div className="section__work">
+      <div className="section__work" name="section_work">
         <div className="container">
-          <SectionTitle titleClass="section__title section__title--dark" text="What we do." />
-          <div className="section__content-wrapper work__wrapper">
-            {
-              items.map((item, i) => {
-                return (
-                  <div className="work__item" key={i}>
-                    <p className="work__icon"><FontAwesome name={item.icon} /></p>
-                    <p className="work__title">{item.title}</p>
-                    <p className="work__text">{item.text}</p>
-                  </div>
-                )
-              })
-            }
-          </div>
+          <ScrollAnimation 
+            animateIn="fadeInRight"
+          >
+            <SectionTitle titleClass="section__title section__title--dark" text="What we do." />
+          </ScrollAnimation>
+          <ScrollAnimation 
+            animateIn="fadeInLeft"
+            offset={ 50 }
+          >
+            <div className="section__content-wrapper work__wrapper">
+              {
+                items.map((item, i) => {
+                  return (
+                    <div className="work__item" key={i}>
+                      <p className="work__icon"><FontAwesome name={item.icon} /></p>
+                      <p className="work__title">{item.title}</p>
+                      <p className="work__text">{item.text}</p>
+                    </div>
+                  )
+                })
+              }
+            </div>
+          </ScrollAnimation>
         </div>
       </div>
     )

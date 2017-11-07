@@ -1,0 +1,18 @@
+NPM: npm install sass-loader css-loader node-sass style-loader --save-dev
+Yarn: yarn add sass-loader css-loader node-sass style-loader --dev
+
+Edit ./config/webpack.config.dev.js
+
+// Process SASS/SCSS
+	    {
+                test: /\.s[ac]ss$/,
+                include: paths.appSrc,
+                loaders: [
+                    require.resolve('style-loader'),
+                    require.resolve('css-loader'),
+                    require.resolve('sass-loader')
+                ]
+            },
+
+add "/\.scss$/" to array:
+exclude: [/\.js$/, /\.html$/, /\.json$/],

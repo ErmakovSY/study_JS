@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ScrollAnimation from 'react-animate-on-scroll';
 import SectionTitle from './../../components/sectionTitle.jsx';
 import SliderTeam from './../../components/sliderTeam.jsx';
 import './main.scss';
@@ -68,7 +69,7 @@ export default class Team extends Component {
       },
       {
         image: './img/team-1.png', 
-        ame: "Andrew Duglas", 
+        name: "Andrew Duglas", 
         job: "Project Manager", 
         social: [
           {
@@ -98,12 +99,21 @@ export default class Team extends Component {
       },
     ];
     return (
-      <div className="section__team" ref={"team"}>
+      <div className="section__team" name="section_team">
         <div className="container">
-          <SectionTitle titleClass="section__title section__title--dark" text="Meet the team." />
-          <div className="section__content-wrapper">
-            <SliderTeam content={itemsInfo} />
-          </div>
+          <ScrollAnimation 
+            animateIn="fadeInRight"
+          >
+            <SectionTitle titleClass="section__title section__title--dark" text="Meet the team." />
+          </ScrollAnimation>
+          <ScrollAnimation 
+            animateIn="fadeInLeft"
+            offset={ 50 }
+          >
+            <div className="section__content-wrapper">
+              <SliderTeam content={itemsInfo} />
+            </div>
+          </ScrollAnimation>
         </div>
       </div>
     )
