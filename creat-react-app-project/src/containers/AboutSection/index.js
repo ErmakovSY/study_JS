@@ -58,7 +58,7 @@ export default class About extends Component {
         <div className="container">
           <Fade right big duration={400}>
             <SectionTitle 
-              titleClass="section__title section__title--dark" 
+              titleClass="section__title--dark" 
               text="We are modest." 
             />
           </Fade>

@@ -52,16 +52,16 @@ export default class Portfolio extends Component {
         name="section_portfolio"
       >
         <div className="container">
-          <Fade right big duration={ 400 }>
+          <Fade right big duration={400}>
             <SectionTitle 
-              titleClass="section__title section__title--light portfolio__maintitle animated" 
+              titleClass="section__title--light portfolio__maintitle animated" 
               text="Lovely work." 
             />
           </Fade>
           <Zoom>
             <GalleryFancy images={PHOTOSET}/>
             <Button 
-              className="button portfolio__button" 
+              className="portfolio__button" 
               title="Show me more"
             />
           </Zoom>

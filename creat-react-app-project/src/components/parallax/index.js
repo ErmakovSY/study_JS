@@ -1,12 +1,13 @@
 import React from 'react';
-import { Parallax } from 'react-parallax';
+import { Parallax, Background } from 'react-parallax';
 import Button from './../button';
+import './style.scss';
 
 const ParalaxMain = () => (
-  <Parallax 
-    bgImage="./img/main-bg.jpg" 
-    strength={300}
-  >
+  <Parallax strength={300}>
+    <Background>
+      <img src="./img/main-bg.jpg"/>
+    </Background>
     <div className="main__parallax-wrapper">
       <div className="main__content-wrapper container">
         <p className="main__title">Welcome to our Marketplace</p>
@@ -15,11 +16,11 @@ const ParalaxMain = () => (
         </p>
         <div className="button__wrapper button__wrapper--horizontal">
           <Button 
-            className="button main__button" 
+            className="main__button" 
             title="View more" 
           />
           <Button 
-            className="button main__button" 
+            className="main__button" 
             title="Video tour" 
           />
         </div>

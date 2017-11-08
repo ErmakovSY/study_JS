@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Slider from 'react-slick';
 import PropTypes from 'prop-types';
 import ItemTeam from './../itemTeam';
+import './style.scss';
 
 const SETTINGS = {
   className: "team__slider",

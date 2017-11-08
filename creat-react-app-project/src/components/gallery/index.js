@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Gallery from 'react-grid-gallery';
 import PropTypes from 'prop-types';
+import './style.scss';
 
 const GalleryFancy = (props) => (
 	<div 

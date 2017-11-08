@@ -3,6 +3,7 @@ import FontAwesome from 'react-fontawesome';
 import classNames from 'classnames';
 import { Fade, Flip, Rotate, Zoom } from 'react-reveal';
 import Scroll from 'react-scroll';
+import './style.scss';
 
 let Link = Scroll.Link;
 const MENU_ITEMS = [

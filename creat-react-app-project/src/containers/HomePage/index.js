@@ -7,7 +7,7 @@ import Portfolio from './../PortfolioSection';
 import Work from './../WorkSection';
 import Features from './../FeaturesSection';
 import Contact from './../ContactSection';
-import './main.scss';
+import ButtonUp from './../../components/scrollUpButton';
 
 let Events = Scroll.Events;
 let scrollSpy = Scroll.scrollSpy;
@@ -62,6 +62,7 @@ export default class HomePage extends Component {
         <Work />
         <Features />
         <Contact />
+        <ButtonUp />
       </div>
     )
   }

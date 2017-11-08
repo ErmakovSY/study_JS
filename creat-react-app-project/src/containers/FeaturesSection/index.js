@@ -43,7 +43,7 @@ export default class Features extends Component {
         <div className="container">
           <Fade right big duration={400}>
             <SectionTitle 
-              titleClass="section__title section__title--light" 
+              titleClass="section__title--light" 
               text="Features."
             />
           </Fade>

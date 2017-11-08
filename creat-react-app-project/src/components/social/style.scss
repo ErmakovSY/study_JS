@@ -1,0 +1,48 @@
+@import "./../../assets/styles/main.scss";
+
+.social {
+  &__wrapper {
+    width: 306px;
+    height: 62px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    @media(max-width: 1000px) {
+      width: 240px;
+      height: 45px; 
+    }
+    @media(max-width: 765px) {
+      display: none;
+      pointer-events: none;
+    }
+  }
+  &__link {
+    display: flex;
+    width: 60px;
+    height: 60px;
+    background-color: $lightGray;
+    margin-right: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    &:last-of-type {
+      margin-right: 0;
+    }
+    span {
+      cursor: pointer;
+      color: $white;
+      font-size: 24px;
+      margin: auto;
+      @media(max-width: 1000px) {
+        font-size: 20px;
+      }
+    }
+    &:hover {
+      background-color: lighten($lightGray, 15%);
+    }
+    @media(max-width: 1000px) {
+      width: 45px;
+      height: 45px;
+    }
+  }
+}

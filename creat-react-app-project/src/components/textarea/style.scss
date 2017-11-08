@@ -1,0 +1,20 @@
+@import "./../../assets/styles/main.scss";
+
+.textarea {
+  display: block;
+  width: 100%;
+  height: calc(100% - 120px);
+  border: none;
+  resize: none; 
+  padding: 15px;
+  margin-bottom: 15px;
+  background-color: $bg-input;
+  border-radius: 6px;
+  @include placeholder($gray, 0.7, 16px, "Quattrocento Sans");
+  @include font("Quattrocento Sans", 16px, 700, $darkGray);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  @media(max-width: 440px) {
+    height: calc(100% - 180px);
+  }
+}

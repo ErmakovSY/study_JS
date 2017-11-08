@@ -1,3 +1,5 @@
+@import "./../../assets/styles/main.scss";
+
 .slider {
   &__wrapper {
     height: 100%;
@@ -6,6 +8,9 @@
     height: 100%;
     width: 100%;
     position: relative;
+    &--team {
+      margin-right: 2px;
+    }
   }
   &__content {
     position: absolute;
@@ -31,7 +36,6 @@
       }
     }
   }
-  
 }
 
 .slick {
@@ -47,7 +51,6 @@
   &-next {
     right: 20px;
   }
-
   &-list {
     height: 100%;
     .slick-loading {
@@ -57,7 +60,6 @@
   &-track {
     height: 100%;
   }
-
   &-dots {
     width: auto;
     display: flex !important;
@@ -98,7 +100,48 @@
     }
   }
   &-active>button { // active dot
-      border-color: $cyan !important;
-      background-color: $cyan !important;   
+    border-color: $gray !important;
+    background-color: $gray !important;    
+  }
+}
+
+.team {
+  &__slider {
+    height: 450px;
+    width: 100%;
+    max-width: 1180px;
+    @media(min-width: 1400px) {
+      max-width: 1300px; 
+    }
+    .slick-list {
+      width: 100%;
+      max-width: 1180px;
+      @media(min-width: 1400px) {
+        max-width: 1300px; 
+      }
+    }
+  }
+  &__dots {
+    position: absolute;
+    left: 75%;
+    li button {
+      border: 1px solid $gray;
+    }
+    li:hover {
+      button {
+        background-color: $gray;
+        border-color: $black;
+      }
+    }
+  }
+  &__social {
+    display: flex;
+    width: auto;
+    a {
+      background-color: $gray;
+      &:hover {
+        background-color: $lightGray;
+      }
+    }
   }
 }

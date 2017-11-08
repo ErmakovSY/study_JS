@@ -1,0 +1,63 @@
+@import "./../../assets/styles/main.scss";
+
+.team {
+  &__item {
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      p {
+        background-color: $gray;
+        span {
+          color: $white;
+        }
+      }
+      .team__overlay {
+        opacity: 1;
+        background-color: rgba(255,255,255,.5);
+      }
+    }
+  }
+  &__image-wrapper {
+    width: auto;
+    height: 300px;
+    margin-right: 20px;
+    position: relative;
+  }
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+  }
+  &__text {
+    background-color: $lightGray;
+    padding: 20px;
+    margin-right: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    span {
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+  &__name {
+    display: block;
+    @include font("Quattrocento Sans", 22px, 700, $black);
+    text-transform: uppercase;
+    @media(max-width: 1200px) {
+      font-size: 18px;
+    }
+  }
+  &__job {
+    color: $gray;
+    @media(max-width: 1200px) {
+      font-size: 14px;
+    }
+  }
+}

@@ -17,14 +17,6 @@
     }
   }
 }
-.tile-viewport {
-  img {
-    margin-left: 0 !important;
-  }
-}
-.tile {
-  max-width: 450px;
-}
 .portfolio {
   &__button {
     display: block;
@@ -33,7 +25,8 @@
   }
   &__content {
     margin: 0 auto 40px;
-    max-width: 1170px;  
+    max-width: 100%;  
+    overflow: hidden !important;
   }
   &__maintitle {
     padding-left: 40px;

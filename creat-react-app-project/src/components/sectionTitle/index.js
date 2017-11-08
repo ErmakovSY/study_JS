@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './style.scss';
 
 const SectionTitle = (props) => (
-  <p className={props.titleClass}>
+  <p className={`section__title ${props.titleClass}`}>
     {props.text}
   </p>
 )

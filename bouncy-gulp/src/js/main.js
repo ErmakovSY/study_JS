@@ -1,3 +1,5 @@
+
+
 $(document).ready(() => {
   /* PORTFOLIO-section */
 
@@ -82,7 +84,50 @@ $(document).ready(() => {
     let id = $(item).attr('href');
     let topOfPage = $(id).offset().top;
     $('body,html').animate({scrollTop: topOfPage}, 700);
+    // if (!$(item).hasClass("active")) {
+    //   $('.header__nav-item').removeClass("active");
+    //   $(item).addClass("active");
+    // }
   }
+
+ 
+
+  // if($('#posChecked').val() == 0) {
+  //   window.pos = [];
+  //   $('.header__nav-item').each((index, el) => {
+  //     let id = $(el).attr('href');
+  //     pos.push(
+  //       {
+  //         element: id,
+  //         offset: $(id).offset().top
+  //       }  
+  //     );
+  //   });
+  //   $('#posChecked').val(1);
+  // }
+  // $(window).on('scroll', () => {
+  //   let posCurrent = $(window).scrollTop();
+  //   pos.map((currItem, i) => {
+  //     let prevItem = (i == 0) ? pos[0] : pos[i - 1];
+  //     let nextItem = (i == pos.length - 1) ? pos[pos.length - 1] : pos[i + 1];
+
+  //     if (i == 0 && posCurrent < nextItem.offset) {
+  //       console.log(`first: ${currItem.element}, pos:${posCurrent}`);
+  //       return;
+  //     }
+  //     else if (i > 0 && i < pos.length-1 && posCurrent > prevItem.offset && posCurrent < currItem.offset) {
+  //       console.log(`some: ${prevItem.element}, prev: ${prevItem.element}, next: ${nextItem.element}, pos:${posCurrent}`);
+  //       return;
+  //     }
+  //     else if (i == pos.length-1 && posCurrent > currItem.offset) {
+  //       console.log(`last: ${currItem.element}, pos:${posCurrent}`);
+  //       return;
+  //     }
+  //   })
+  // });
+  
+  
+
   /* end slow scroll from menu-item to current section */
 
   /* MAIN-section */

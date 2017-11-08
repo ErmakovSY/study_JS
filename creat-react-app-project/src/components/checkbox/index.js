@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import './style.scss';
 
 export default class Checkbox extends Component {
   changeHandler() {
@@ -8,13 +9,13 @@ export default class Checkbox extends Component {
   render() {
     return (
       <label className="checkbox__label">
-        {this.props.title}
         <input 
           type="checkbox" 
           checked={this.props.checkHandler}
           className="checkbox__input"
           onChange={this.changeHandler}
         />
+        {this.props.title}
       </label>
     )
   }

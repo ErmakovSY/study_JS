@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import FontAwesome from 'react-fontawesome';
 import PropTypes from 'prop-types';
+import './style.scss';
 
 export default class Social extends Component {
   render() {

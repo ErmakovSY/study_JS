@@ -1,6 +1,7 @@
 import React from 'react';
 import { Fade, Flip, Rotate, Zoom } from 'react-reveal';
 import Social from './../social';
+import './style.scss';
 
 const SOCIAL_ITEMS = [
   {

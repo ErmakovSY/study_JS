@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Social from './../social';
+import './style.scss';
 
 const ItemTeam = (props) => (
   <div className="team__item">

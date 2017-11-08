@@ -1,0 +1,19 @@
+@import "./../../assets/styles/main.scss";
+
+.tile-viewport {
+  width: 100% !important;
+  img {
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+}
+.tile {
+  // max-width: 400px;
+  width: calc((100% - 90px) / 3);
+  @media(max-width: 900px) {
+    width: calc((100% - 60px) / 2);
+  }
+  @media(max-width: 600px) {
+    width: 100%;
+  }
+}

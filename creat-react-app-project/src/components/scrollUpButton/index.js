@@ -1,6 +1,7 @@
 import React from "react";
 import ScrollUpButton from "react-scroll-up-button";
 import FontAwesome from 'react-fontawesome';
+import './style.scss';
  
 const ButtonUp = () => (
   <div>
