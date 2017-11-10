@@ -1,0 +1,38 @@
+// @import './../../assets/styles/main.scss';
+
+.section {
+  &__portfolio {
+    margin-bottom: -10px;
+    background-color: $gray;
+    .container {
+      padding: 80px 20px;
+      max-width: 1210px;
+      display: flex;
+      flex-direction: column;
+      @media(min-width: 1400px) {
+        max-width: 1330px; 
+      }
+      @media(max-width: 765px) {
+        padding: 30px 20px;
+      }
+    }
+  }
+}
+.portfolio {
+  &__button {
+    display: block;
+    width: 140px;
+    margin: 0 auto;
+  }
+  &__content {
+    margin: 0 auto 40px;
+    max-width: 100%;  
+    overflow: hidden !important;
+  }
+  &__maintitle {
+    padding-left: 40px;
+    &:before {
+      left: 15px;
+    }
+  }
+}

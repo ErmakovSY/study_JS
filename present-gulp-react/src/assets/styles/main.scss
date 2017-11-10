@@ -1,0 +1,34 @@
+@import "./../../../node_modules/slick-carousel/slick/slick.scss";
+// @import "./../../../node_modules/animate.css/animate.min.css";
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+
+@import "./base/_colors.scss";
+@import "./base/_mixins.scss";
+@import "./base/_reset.scss";
+@import "./base/_base.scss";
+@import "./base/_fonts.scss";
+
+@import "./../../containers/MainSection/style.scss";
+@import "./../../containers/AboutSection/style.scss";
+@import "./../../containers/TeamSection/style.scss";
+@import "./../../containers/PortfolioSection/style.scss";
+@import "./../../containers/FeaturesSection/style.scss";
+@import "./../../containers/WorkSection/style.scss";
+@import "./../../containers/ContactSection/style.scss";
+
+@import "./../../components/button/style.scss";
+@import "./../../components/checkbox/style.scss";
+@import "./../../components/footer/style.scss";
+@import "./../../components/form/style.scss";
+@import "./../../components/gallery/style.scss";
+@import "./../../components/header/style.scss";
+@import "./../../components/input/style.scss";
+@import "./../../components/itemTeam/style.scss";
+@import "./../../components/listItemAbout/style.scss";
+@import "./../../components/map/style.scss";
+@import "./../../components/parallax/style.scss";
+@import "./../../components/scrollUpButton/style.scss";
+@import "./../../components/sectionTitle/style.scss";
+@import "./../../components/sliderTeam/style.scss";
+@import "./../../components/social/style.scss";
+@import "./../../components/textarea/style.scss";

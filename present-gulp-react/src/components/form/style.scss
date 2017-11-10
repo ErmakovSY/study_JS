@@ -1,0 +1,13 @@
+// @import "./../../assets/styles/main.scss";
+
+.form {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  button {
+    @media(max-width: 400px) {
+      width: 90px;
+    }
+  }
+}

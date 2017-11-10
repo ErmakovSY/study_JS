@@ -1,0 +1,45 @@
+// @import "./../../assets/styles/main.scss";
+
+.checkbox {
+  margin: 0 10px 0 20px;
+  cursor: pointer;
+  position: relative;
+  &:before {
+    content: '✔';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-38%, -62%);
+    font-size: 24px;
+    color: $gray;
+    z-index: 2;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    width: calc(100% + 6px);
+    height: calc(100% + 6px);
+    border: 1px solid $gray;
+    border-radius: 4px;
+    background-color: $white;
+    z-index: 1;
+  }
+  &:checked {
+    &:before {
+      opacity: 1;
+    }
+  }
+  &__label {
+    align-self: flex-start;
+    color: $gray;
+    line-height: 45px;
+    cursor: pointer;
+    @media(max-width: 800px) {
+      font-size: 14px;
+    }
+  }
+}

@@ -1,0 +1,77 @@
+// @import './../../assets/styles/main.scss';
+
+.section {
+  &__contact {
+    background-color: $white;
+    min-height: calc(100vh - 60px);
+    .container {
+      padding: 80px 20px;
+      &:first-child {
+        padding-bottom: 0;
+      }
+      @media(max-width: 765px) {
+        padding: 30px 20px;
+      }
+    }
+  }
+}
+.contact {
+  &__wrapper {
+    position: relative;
+  }
+  &__maintitle {
+    margin-bottom: 80px;
+    @media(max-width: 765px) {
+      margin-bottom: 30px;
+    }
+    @media(max-width: 400px) {
+      font-size: 24px; 
+    }
+  }
+  &__title {
+    @include font("Quattrocento Sans", 20px, 700, $darkGray);
+    text-transform: uppercase;
+    line-height: 20px;
+    margin-bottom: 35px;
+  }
+  &__text {
+    width: 50%;
+    @media(max-width: 765px) {
+      width: 100%;
+    }
+    span {
+      display: block;
+      font-size: 16px;
+      color: $lightGray;
+      line-height: 1.6;
+      margin-bottom: 25px;
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+  &__form {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 50%;
+    height: 400px;
+    padding: 30px 30px 1px 30px;
+    background-color: $white;
+    @media(max-width: 765px) {
+      position: relative;
+      justify-content: flex-start;
+      width: 100%;
+      padding: 30px 0 0 0;
+    }
+  }
+  &__button {
+    display: block;
+    border-color: $darkGray !important;
+    color: $darkGray !important;
+    &:hover {
+      border-color: $white;
+      color: $white;
+    }
+  }
+}

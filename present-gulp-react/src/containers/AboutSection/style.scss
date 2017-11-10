@@ -1,0 +1,55 @@
+// @import './../../assets/styles/main.scss';
+
+.section {
+  &__about {
+    .container {
+      padding: 80px 20px 0;
+      @media(max-width: 765px) {
+        padding: 30px 20px 0;
+      }
+    }
+  }
+  &__content-wrapper {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;   
+    &--left {
+      justify-content: space-between;
+      width: 60%;
+      margin-right: 20px;
+    }
+    &--right {
+      width: 40%;
+      justify-content: flex-start;
+    }
+    @media(max-width: 765px) {
+      width: 100%;
+    }
+  }
+  &__text {
+    span {
+      display: inline-block;
+      margin-bottom: 10px;
+      color: $lightGray;
+      line-height: 1.5;
+    }
+    @media(max-width: 1000px) {
+      font-size: 14px; 
+    }
+    @media(max-width: 765px) {
+      margin-bottom: 15px;
+    }
+  }
+}
+.about {
+  &__content {
+    @media(max-width: 765px) {
+      flex-direction: column;
+    }
+  }
+}

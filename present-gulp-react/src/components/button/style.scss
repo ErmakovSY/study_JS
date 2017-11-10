@@ -1,0 +1,33 @@
+// @import "./../../assets/styles/main.scss";
+
+.button {
+  @include button-1(124px, $trp, $white, $cyan, $cyan);
+  @include font("Open Sans", 14, 600, $white);
+  text-transform: uppercase;
+  &__wrapper {
+    display: flex;
+    &--horizontal {
+      flex-direction: row;
+      &>button {
+        margin-right: 10px;
+      }
+      &>button:last-of-type {
+        margin-right: 0;
+      }
+    }
+    &--vertical {
+      flex-direction: column;
+      &>button {
+        margin-bottom: 10px;
+      }
+      &>button:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+    @media(max-width: 700px) {
+      justify-content: center;
+    }
+  }
+}
+
+

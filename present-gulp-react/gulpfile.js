@@ -3,6 +3,7 @@ const gulp = require('gulp');
 const data = require('gulp-data');
 const watch = require('gulp-watch');
 const debug = require('gulp-debug');
+// const webpack = require('gulp-webpack');
 
 /* Plugin for webserver */
 const browserSync = require("browser-sync"); /* Local web-server */
@@ -47,11 +48,10 @@ gulp.task('html', () => {
     .pipe(reload({ stream: true }));
 });
 
-/* Task for CSS */
+// /* Task for CSS */
 gulp.task('css', () => {
   gulp.src([
-    './src/styles/main.scss',
-    './src/components/*.scss'
+    './src/assets/styles/main.scss'
   ])
     .pipe(plumber({errorHandler: onError}))
     .pipe(sourcemaps.init())
@@ -65,15 +65,23 @@ gulp.task('css', () => {
     .pipe(reload({ stream: true }));
 });
 
-/* Task for JSX */
+// /* Task for JSX */
 gulp.task('jsx', () => {
-  return browserify({entries: './src/js/index.jsx', extensions: ['.jsx'], debug: true})
+  return browserify({entries: './src/index.js', extensions: ['.js', '.js'], debug: true})
   .transform('babelify', {presets: ['es2015', 'react']})
-  .bundle()
+  .bundle().on('error', function (err) {  
+    console.error(err.toString());
+    this.emit("end")})
   .pipe(source('main.js'))
   .pipe(gulp.dest('./build/js'))
   .pipe(reload({ stream: true }));
 });
+
+// gulp.task('webpack', function() {
+//   return gulp.src('./src/index.jsx')
+//     .pipe(webpack(require('./webpack.config.js')))
+//     .pipe(gulp.dest('./build/'));
+// });
 
 /* Task for JS */
 // gulp.task('js', () => {
@@ -102,7 +110,7 @@ gulp.task('php', () => {
 
 /* Task for Images */
 gulp.task('image', () => {
-  gulp.src('./src/img/**/*.*')
+  gulp.src('./src/assets/images/**/*.*')
     .pipe(newer('./build/img/'))
     .pipe(gulp.dest('./build/img/'))
     .pipe(reload({ stream: true }));
@@ -127,6 +135,7 @@ gulp.task('htaccess', () => {
 
 /* Task Build */
 gulp.task('build', ['html', 'css', 'jsx', 'php', 'image', 'fonts', 'htaccess']);
+// gulp.task('build', ['html', 'webpack', 'php', 'image', 'fonts', 'htaccess']);
 
 /* Task for webserver */
 const config = {
@@ -144,11 +153,11 @@ gulp.task('webserver', () => browserSync(config));
 /* Task Watch */
 gulp.task('watch', () => {
   watch('./src/*.html', () => gulp.run('html'));
-  watch('./src/styles/**/*.scss', () => gulp.run('css'));
-  // watch('./src/components/*.{js,jsx}', () => gulp.run('jsx'));
-  watch('./src/components/*.jsx', () => gulp.run('jsx'));
-  watch('./src/img/**/*.*', () => gulp.run('image'));
-  watch('./src/fonts/**/*.*', () => gulp.run('fonts'));
+  watch('./src/**/*.scss', () => gulp.run('css'));
+  watch('./src/**/*.{js,jsx}', () => gulp.run('jsx'));
+  // watch('./src/**/*.js', () => gulp.run(['webpack']));
+  watch('./src/assets/images/**/*.*', () => gulp.run('image'));
+  // watch('./src/assets/fonts/**/*.*', () => gulp.run('fonts'));
 });
 
 /* Task Default */

@@ -104,7 +104,7 @@ export default class Header extends Component {
                     spy={true} 
                     smooth={true} 
                     offset={0} 
-                    duration={500} 
+                    duration={400} 
                     key={item.title}
                   >
                     {item.title}
