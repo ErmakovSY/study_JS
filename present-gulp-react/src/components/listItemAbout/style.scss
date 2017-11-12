@@ -4,9 +4,6 @@
   &__item {
     display: flex;
     margin-bottom: 30px;
-    &:last-of-type {
-      margin-bottom: 0;
-    }
     @media(max-width: 765px) {
       flex-direction: column;
       justify-content: center;
@@ -49,7 +46,7 @@
   }
   &__text {
     font-size: 16px;
-    color: $lightGray;
+    color: $gray;
     @media(max-width: 1000px) {
       font-size: 14px; 
     }

@@ -95,3 +95,11 @@
     border-color: $br-color-hover;
   }
 }
+
+@function set-color-on-bg($color) {
+  @if (lightness($color) > 40) {
+    @return $black; // Lighter backgorund, return dark color
+  } @else {
+    @return $white; // Darker background, return light color
+  }
+}

@@ -10,3 +10,52 @@
     }
   }
 }
+.team {
+  &__slider {
+    height: 450px;
+    width: 100%;
+    max-width: 1180px;
+    @media(min-width: 1400px) {
+      max-width: 1300px; 
+    }
+    .slick-list {
+      width: 100%;
+      max-width: 1180px;
+      @media(min-width: 1400px) {
+        max-width: 1300px; 
+      }
+    }
+  }
+  &__image-wrapper {
+    margin: 0 15px !important;
+  }
+  &__text {
+    margin: 0 15px !important;
+  }
+  &__dots {
+    position: absolute;
+    left: 75%;
+    @media(max-width: 716px) {
+      left: 50% !important; 
+    }
+    li button {
+      border: 1px solid $gray !important;
+    }
+    li:hover {
+      button {
+        background-color: $gray;
+        border-color: $black;
+      }
+    }
+  }
+  &__social {
+    display: flex;
+    width: auto;
+    a {
+      background-color: $gray;
+      &:hover {
+        background-color: $lightGray;
+      }
+    }
+  }
+}

@@ -11,6 +11,7 @@ export default class HomePage extends Component {
     this.state = {
       inputValue: '',
       todoList: [],
+      inputValid: false,
     }
   }
 
@@ -20,44 +21,71 @@ export default class HomePage extends Component {
     });
   }
 
-  submitTodo = () => {
-    const todoList = [...this.state.todoList];
-    todoList.push(this.state.inputValue);
-    this.setState({ todoList, inputValue: '' });
-    console.log(this.state.todoList);
+  submitTodo = (e) => {
+    e.preventDefault();
+    if(this.state.inputValue) {
+      const TODO_ITEM = {
+        number: this.state.todoList.length + 1,
+        name: this.state.inputValue
+      }
+      const TODO_LIST = [...this.state.todoList];
+      TODO_LIST.push(TODO_ITEM);
+      this.setState({ 
+        todoList: TODO_LIST, 
+        inputValue: '',
+        inputValid: true 
+      });
+    } else {
+      this.setState({
+        inputValid: false
+      })
+    }
+  }
+
+  deleteTodo = (name) => {
+    const filteredList = this.state.todoList.filter(item => item.name !== name);
+    this.setState({
+      todolist: filteredList
+    })
   }
 
   render() {
     const { inputValue, todoList } = this.state; // деструктивное присваивание
-
     return (
       <div className="container">
         <h1>ToDo List</h1>
-        <div>
-          <SimpleInput 
-            type="text"
-            name="todoItem"
-            value={inputValue}
-            placeholder="New task..."
-            onChange={this.handlerInputChange}
-          />
-          <Button
-            label="Add ToDo"
-            onClick={this.submitTodo}
-          />
-        </div>
-        <div>
-          {
-            todoList.map((item, index) => 
-              <TodoItem 
-                key={index} 
-                number={index + 1} 
-                name={item} 
-               // {...item} //оператор разворота (передает объект в компонент, принимаем по ключам)
-              />
-            )
-          }
-        </div>
+        <form
+          className="formWrapper"
+        >
+          <div>
+            <SimpleInput 
+              type="text"
+              name="todoItem"
+              value={inputValue}
+              placeholder="New task..."
+              onChange={this.handlerInputChange}
+              isvalid={this.state.inputValid}
+              errortext="Field can not be empty"
+            />
+            <Button
+              label="Add ToDo"
+              onClick={this.submitTodo}
+            />
+          </div>
+          <div>
+            {
+              todoList.map((item) => 
+                <TodoItem 
+                  key={item.number} 
+                  number={todoList.length + 1} 
+                  name={item.name} 
+                  deletetodo={() => this.deleteTodo(item.name)}
+                // {...item} //оператор разворота (передает объект в компонент, принимаем по ключам)
+                />
+              )
+            }
+          </div>
+        </form>
       </div>
     );
   }

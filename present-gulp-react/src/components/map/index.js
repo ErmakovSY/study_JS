@@ -41,10 +41,12 @@ export default class MapFancy extends React.PureComponent {
   }
   render() {
     return (
-      <Map
-        isMarkerShown={this.state.isMarkerShown}
-        onMarkerClick={this.handleMarkerClick}
-      />
+      <div className="contact__map">
+        <Map
+          isMarkerShown={this.state.isMarkerShown}
+          onMarkerClick={this.handleMarkerClick}
+        />
+      </div>
     )
   }
 }

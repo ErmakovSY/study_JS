@@ -8,30 +8,47 @@
   resize: none; 
   padding: 15px;
   background-color: $bg-input;
+  border: 1px solid $trp;
   border-radius: 6px;
   @include placeholder($gray, 0.7, 16px, "Quattrocento Sans");
   @include font("Quattrocento Sans", 16px, 700, $darkGray);
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   &--valid {
-    .input__icon--valid {
-      opacity: 0.7;
-    }
-    .input__icon--invalid {
-      opacity: 0;
-    }
+    border-color: $green;
   }
+  &--invalid {
+    border-color: $red;
+  }
+  &:focus~span {
+    transform: translateY(-70%);
+    font-size: 12px;
+  } 
   &__wrapper {
     width: 100%;
-    height: calc(100% - 120px);
+    height: calc(100% - 150px);
     margin-bottom: 15px;
     position: relative;
     @media(max-width: 440px) {
-      height: calc(100% - 180px);
+      height: calc(100% - 235px);
     }
   }
-  &__icon {
-    top: 20px;
-    right: 10px;
+  &__placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    line-height: 0;
+    color: $gray;
+    span {
+      position: absolute;
+      top: 0;
+      left: 0;
+      line-height: 100%;
+      padding: 15px;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+    }
   }
 }

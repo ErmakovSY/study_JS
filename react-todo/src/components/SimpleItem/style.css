@@ -1,0 +1,9 @@
+.inputWrapperError {
+  border: 2px solid red;
+}
+.inputError {
+  opacity: 0;
+}
+.inputError--show {
+    opacity: 1;
+}

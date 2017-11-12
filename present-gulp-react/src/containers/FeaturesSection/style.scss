@@ -2,11 +2,12 @@
 
 .section {
   &__features {
-    background-color: $gray;
+    background: $gray url("./../img/features-bg.jpg") 100% 100% no-repeat;
+    background-size: cover;
     .container {
       padding: 80px 20px;
       @media(max-width: 765px) {
-        padding: 30px 20px;
+        padding: 50px 20px;
       }
     }
   }

@@ -35,7 +35,7 @@ const Footer = () => (
     <div className="container">
       <Fade left delay={500}>
         <p className="footer__copy">
-          © Copyright 2017 by PSD Booster. All Rights Reserved.
+          © Copyright 2017 by Ermakov S.
         </p>
       </Fade>
       <Fade right delay={500}>

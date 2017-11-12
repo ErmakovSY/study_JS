@@ -3,7 +3,12 @@
 .button {
   @include button-1(124px, $trp, $white, $cyan, $cyan);
   @include font("Open Sans", 14, 600, $white);
+  line-height: 14px;
   text-transform: uppercase;
+  padding: 5px;
+  @media(max-width: 400px) {
+    width: 80px;
+  }
   &__wrapper {
     display: flex;
     &--horizontal {

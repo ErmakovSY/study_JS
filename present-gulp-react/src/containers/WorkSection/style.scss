@@ -2,7 +2,8 @@
 
 .section {
   &__work {
-    background-color: $white;
+    background: $white url("./../img/work-bg.jpg") 100% 100% no-repeat;
+    background-size: cover;
     .container {
       padding: 80px 20px;
       @media(max-width: 765px) {
@@ -71,7 +72,7 @@
   &__text {
     text-align: center;
     font-size: 16px;
-    color: $lightGray;
+    color: $gray;
     line-height: 1.5;
   }
 }

@@ -34,12 +34,30 @@
     }
   }
   &__label {
-    align-self: flex-start;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: $gray;
     line-height: 45px;
     cursor: pointer;
     @media(max-width: 800px) {
       font-size: 14px;
     }
+    @media(max-width: 400px) {
+      font-size: 12px;
+    }
+  }
+  &--valid {
+    &:after {
+      border-color: $green;
+    }
+  }
+  &--invalid {
+    &:after {
+      border-color: $red;
+    }
+  }
+  @media(max-width: 440px) {
+    margin: 0 10px 0 0;
   }
 }

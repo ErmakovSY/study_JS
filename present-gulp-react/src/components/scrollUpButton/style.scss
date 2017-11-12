@@ -3,7 +3,7 @@
 .button {
   &__up {
     position: fixed;
-    bottom: 75px;
+    bottom: 20px;
     right: -75px;
     width: 40px;
     height: 40px;
@@ -30,7 +30,7 @@
       }
     }
     &--toggled {
-      right: 20px;
+      right: 10px;
       opacity: 0.6;
     }
   }

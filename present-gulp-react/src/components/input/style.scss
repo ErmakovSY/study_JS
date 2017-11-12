@@ -5,27 +5,29 @@
   width: 100%;
   height: 100%;
   border: none;
-  padding: 15px 35px 15px 15px;
+  padding: 15px;
   background-color: $bg-input;
+  border: 1px solid $trp;
   border-radius: 6px;
-  @include placeholder($gray, 0.7, 16px, "Quattrocento Sans");
   @include font("Quattrocento Sans", 16px, 700, $darkGray);
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   &--valid {
-    .input__icon--valid {
-      opacity: 0.7;
-    }
-    .input__icon--invalid {
-      opacity: 0;
-    }
+    border-color: $green;
   }
+  &--invalid {
+    border-color: $red;
+  }
+  &:focus~span {
+    transform: translateY(-70%);
+    font-size: 12px;
+  } 
   &__wrapper {
     position: relative;
     height: 45px;
-    width: calc((100% - 15px) / 2);
-    margin-right: 15px;
-    margin-bottom: 15px;
+    width: calc((100% - 25px) / 2);
+    margin-right: 25px;
+    margin-bottom: 25px;
     &:nth-of-type(2) {
       margin-right: 0;
     }
@@ -34,20 +36,21 @@
       margin-right: 0;
     }
   }
-  &__icon {
+  &__placeholder {
     position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-    font-size: 26px;
-    pointer-events: none;
-    transition: all 0.3s ease-in-out;
-    opacity: 0;
-    &--valid {
-      color: green;
-    }
-    &--invalid {
-      color: red;
+    top: 0;
+    left: 0;
+    width: 100%;
+    line-height: 0;
+    color: $gray;
+    span {
+      position: absolute;
+      top: 0;
+      left: 0;
+      line-height: 100%;
+      padding: 15px;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
     }
   }
 }
