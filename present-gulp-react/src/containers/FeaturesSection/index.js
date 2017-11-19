@@ -50,7 +50,7 @@ export default class Features extends Component {
             <div className="section__content-wrapper features__wrapper">
               {
                 ITEMS.map(item => 
-                  <Fade left big 
+                  <Zoom 
                     duration={item.appearance.duration} 
                     delay={item.appearance.delay}
                     className="features__item"
@@ -69,7 +69,7 @@ export default class Features extends Component {
                     <p className="features__text">
                       {item.text}
                     </p>
-                  </Fade>
+                  </Zoom>
                 )
               }
             </div>

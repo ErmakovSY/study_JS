@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Input from './../input';
 import Textarea from './../textarea';
 import Button from './../button';
@@ -91,20 +92,16 @@ export default class Form extends Component {
     });
     return (
       <form className="form contact__form">
-        <Input 
-          className={inputNameClasses}
-          name="name" 
-          placeholder="Name..." 
-          onBlur={this.inputBlurHandler}
-          value={this.state.nameValue}
-        />
-        <Input 
-          className={inputEmailClasses} 
-          name="email"
-          placeholder="Email..." 
-          onBlur={this.inputBlurHandler}
-          value={this.state.emailValue}
-        />
+        <MuiThemeProvider>
+          <Input 
+
+          />
+        </MuiThemeProvider>
+        <MuiThemeProvider>
+          <Input 
+            
+          />
+        </MuiThemeProvider>
         <Textarea 
           className={textareaClasses}
           onBlur={this.inputBlurHandler}
@@ -127,3 +124,15 @@ export default class Form extends Component {
     )
   }
 }
+
+            {/* className={inputNameClasses}
+            name="name" 
+            placeholder="Name..." 
+            onBlur={this.inputBlurHandler}
+            value={this.state.nameValue} */}
+
+            {/* className={inputEmailClasses} 
+            name="email"
+            placeholder="Email..." 
+            onBlur={this.inputBlurHandler}
+            value={this.state.emailValue} */}
