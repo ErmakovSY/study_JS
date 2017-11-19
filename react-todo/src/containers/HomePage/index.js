@@ -1,8 +1,17 @@
 import React, { Component } from 'react';
+import { Section, Form, Title, InputBlock, ListWrapper } from './../../components/styledComponents.js';
 import TodoItem from './../../components/TodoItem';
-import SimpleInput from './../../components/SimpleItem';
-import Button from './../../components/Button';
+import Input from './../../components/Input';
+import SubmitButton from './../../components/ButtonSubmit';
 import './main.css';
+
+const validation = (value) => {
+  if(value.length > 0) {
+    return true;
+  } else {
+    return false;
+  }
+}
 
 export default class HomePage extends Component {
 
@@ -11,13 +20,24 @@ export default class HomePage extends Component {
     this.state = {
       inputValue: '',
       todoList: [],
-      inputValid: false,
+      inputValid: true,
     }
   }
 
+  // componentDidMount() {
+  //   fetch("store.json")
+  //   .then(response => response.json())
+  //   .then(json => {
+  //     this.setState({
+  //       todoList: json
+  //     })
+  //   })
+  // }
+
   handlerInputChange = (event) => {
     this.setState({
-      inputValue: event.target.value
+      inputValue: event.target.value,
+      inputValid: validation(event.target.value)
     });
   }
 
@@ -25,7 +45,7 @@ export default class HomePage extends Component {
     e.preventDefault();
     if(this.state.inputValue) {
       const TODO_ITEM = {
-        number: this.state.todoList.length + 1,
+        number: this.state.todoList.length,
         name: this.state.inputValue
       }
       const TODO_LIST = [...this.state.todoList];
@@ -42,51 +62,64 @@ export default class HomePage extends Component {
     }
   }
 
-  deleteTodo = (name) => {
-    const filteredList = this.state.todoList.filter(item => item.name !== name);
+  deleteTodo = (e) => {
+    e.preventDefault();
+    const FILTERED_LIST = this.state.todoList.filter(item => item.number + 1 !== Number(e.target.id));
     this.setState({
-      todolist: filteredList
+      todoList: FILTERED_LIST
+    });
+    setTimeout(() => this.renumberList(), 1)
+  }
+
+  renumberList = () => {
+    let number = -1;
+    let renumberedList = [];
+    this.state.todoList.map((item) => {
+      renumberedList.push({
+        number: ++number,
+        name: item.name
+      })
+    });
+    this.setState({ 
+      todoList: renumberedList
     })
   }
 
   render() {
     const { inputValue, todoList } = this.state; // деструктивное присваивание
     return (
-      <div className="container">
-        <h1>ToDo List</h1>
-        <form
-          className="formWrapper"
-        >
-          <div>
-            <SimpleInput 
-              type="text"
+      <Section>
+        <Title>ToDo List</Title>
+        <Form>
+          <InputBlock>
+            <Input 
               name="todoItem"
               value={inputValue}
-              placeholder="New task..."
+              label="New Task"
+              placeholder="Enter new task..."
               onChange={this.handlerInputChange}
-              isvalid={this.state.inputValid}
-              errortext="Field can not be empty"
+              isValid={this.state.inputValid}
+              errorText="Field can not be empty"
             />
-            <Button
-              label="Add ToDo"
+            <SubmitButton
               onClick={this.submitTodo}
             />
-          </div>
-          <div>
+          </InputBlock>
+          <ListWrapper>
             {
               todoList.map((item) => 
                 <TodoItem 
                   key={item.number} 
-                  number={todoList.length + 1} 
+                  number={item.number + 1} 
                   name={item.name} 
-                  deletetodo={() => this.deleteTodo(item.name)}
+                  onClickDelete={this.deleteTodo}
                 // {...item} //оператор разворота (передает объект в компонент, принимаем по ключам)
                 />
               )
             }
-          </div>
-        </form>
-      </div>
+          </ListWrapper>
+        </Form>
+      </Section>
     );
   }
 }
