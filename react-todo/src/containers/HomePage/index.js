@@ -1,38 +1,22 @@
 import React, { Component } from 'react';
-import { Section, Form, Title, InputBlock, ListWrapper } from './../../components/styledComponents.js';
+import { Section, Form, Title, InputBlock, ListWrapper } from './../../components/styledComponents';
 import TodoItem from './../../components/TodoItem';
 import Input from './../../components/Input';
 import SubmitButton from './../../components/ButtonSubmit';
-import './main.css';
 
-const validation = (value) => {
-  if(value.length > 0) {
-    return true;
-  } else {
-    return false;
-  }
-}
+const validation = (value) => value.length > 0;
 
 export default class HomePage extends Component {
 
   constructor() {
-    super(); // наследование свойств родительского класса
+    super();
     this.state = {
       inputValue: '',
       todoList: [],
       inputValid: true,
+      listItemEditing: ''
     }
   }
-
-  // componentDidMount() {
-  //   fetch("store.json")
-  //   .then(response => response.json())
-  //   .then(json => {
-  //     this.setState({
-  //       todoList: json
-  //     })
-  //   })
-  // }
 
   handlerInputChange = (event) => {
     this.setState({
@@ -41,20 +25,37 @@ export default class HomePage extends Component {
     });
   }
 
-  submitTodo = (e) => {
-    e.preventDefault();
+  submitTodo = (event) => {
+    event.preventDefault();
     if(this.state.inputValue) {
-      const TODO_ITEM = {
-        number: this.state.todoList.length,
-        name: this.state.inputValue
-      }
       const TODO_LIST = [...this.state.todoList];
-      TODO_LIST.push(TODO_ITEM);
-      this.setState({ 
-        todoList: TODO_LIST, 
-        inputValue: '',
-        inputValid: true 
-      });
+      if(this.state.listItemEditing === '') {
+        const TODO_ITEM = {
+          number: this.state.todoList.length,
+          name: this.state.inputValue
+        }
+        TODO_LIST.push(TODO_ITEM);
+        this.setState({ 
+          todoList: TODO_LIST, 
+          inputValue: '',
+          inputValid: true 
+        })
+      } else {
+        const EDITED_ITEM = {
+          number: this.state.listItemEditing,
+          name: this.state.inputValue
+        };
+        TODO_LIST.map(item => {
+          if(item.number == EDITED_ITEM.number) {
+            item.name = EDITED_ITEM.name
+          }
+        });
+        this.setState({
+          todoList: TODO_LIST,
+          inputValue: '',
+          listItemEditing: ''
+        })
+      }
     } else {
       this.setState({
         inputValid: false
@@ -62,9 +63,18 @@ export default class HomePage extends Component {
     }
   }
 
-  deleteTodo = (e) => {
-    e.preventDefault();
-    const FILTERED_LIST = this.state.todoList.filter(item => item.number + 1 !== Number(e.target.id));
+  editTodo = (event) => {
+    event.preventDefault();
+    const ITEM_TO_EDIT = this.state.todoList.filter(item => item.number + 1 === Number(event.target.id));
+    this.setState({
+      listItemEditing: ITEM_TO_EDIT[0].number,
+      inputValue: ITEM_TO_EDIT[0].name,
+    });
+  }
+
+  deleteTodo = (event) => {
+    event.preventDefault();
+    const FILTERED_LIST = this.state.todoList.filter(item => item.number + 1 !== Number(event.target.id));
     this.setState({
       todoList: FILTERED_LIST
     });
@@ -73,20 +83,21 @@ export default class HomePage extends Component {
 
   renumberList = () => {
     let number = -1;
-    let renumberedList = [];
-    this.state.todoList.map((item) => {
-      renumberedList.push({
+    const RENUMBERED_LIST = [];
+    const TODO_LIST = [...this.state.todoList];
+    TODO_LIST.map(item => 
+      RENUMBERED_LIST.push({
         number: ++number,
         name: item.name
       })
-    });
+    );
     this.setState({ 
-      todoList: renumberedList
+      todoList: RENUMBERED_LIST
     })
   }
 
   render() {
-    const { inputValue, todoList } = this.state; // деструктивное присваивание
+    const { inputValue, todoList, inputValid, listItemEditing } = this.state;
     return (
       <Section>
         <Title>ToDo List</Title>
@@ -94,15 +105,15 @@ export default class HomePage extends Component {
           <InputBlock>
             <Input 
               name="todoItem"
-              value={inputValue}
-              label="New Task"
               placeholder="Enter new task..."
-              onChange={this.handlerInputChange}
-              isValid={this.state.inputValid}
               errorText="Field can not be empty"
+              value={inputValue}
+              onChange={this.handlerInputChange}
+              isValid={inputValid}
             />
             <SubmitButton
               onClick={this.submitTodo}
+              editMode={listItemEditing === ''}
             />
           </InputBlock>
           <ListWrapper>
@@ -112,8 +123,8 @@ export default class HomePage extends Component {
                   key={item.number} 
                   number={item.number + 1} 
                   name={item.name} 
+                  onClickEdit={this.editTodo}
                   onClickDelete={this.deleteTodo}
-                // {...item} //оператор разворота (передает объект в компонент, принимаем по ключам)
                 />
               )
             }

@@ -37,3 +37,7 @@ img {
 ul li {
 	list-style-image: none;
 }
+
+.cbalink {
+	display: none !important;
+}
