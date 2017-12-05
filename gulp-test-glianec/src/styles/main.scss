@@ -1,0 +1,17 @@
+@import './../../node_modules/font-awesome/scss/font-awesome.scss';
+@import './../../node_modules/ionicons/dist/scss/ionicons.scss';
+@import './../../node_modules/slick-carousel/slick/slick.scss';
+
+/* BASE */
+@import './base/_reset.scss';
+@import './base/_colors.scss';
+@import './base/_fonts.scss';
+@import './base/_mixins.scss';
+@import './base/_base.scss';
+
+/* SECTIONS */
+@import './sections/_main.scss';
+@import './sections/_action.scss';
+@import './sections/_catalog.scss';
+@import './sections/_popular.scss';
+@import './sections/_contact.scss';
