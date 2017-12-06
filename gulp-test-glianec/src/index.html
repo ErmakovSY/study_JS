@@ -4,34 +4,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Start Template</title>
+  <title>Inside Windows</title>
   <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
   <section class="main">
-    <div class="container">
-      <header class="header">
-        <div class="header__wrapper">
+    <header class="header">
+      <div class="header__wrapper container">
+        <div class="header__title-wrapper">
           <div class="header__logo">
-            <img class="image" src="./img/logo.png" alt="logo" />
+            <img class="image" src="./img/main/logo.png" alt="logo" />
           </div>
           <p class="header__title">
             Inside Windows
           </p>
-          <p class="header__title">
-            Inside Windows
-          </p>
-          <p class="header__subtitle">
-            Окна от лучших мировых производителей
-          </p>
-          <p class="header__phone">
-            + 38 (044) 812-23-12
-          </p>
-          <button class="button header__button">
-            Заказать звонок
-          </button>
-        </div>    
-        <div class="header__nav">
+        </div>
+        <p class="header__subtitle">
+          Окна от <span>лучших</span> мировых производителей
+        </p>
+        <p class="header__phone">
+          + 38 (044) 812-23-12
+        </p>
+        <button class="button header__button">
+          <img src="./img/phone-call.svg" alt="call" />
+          Заказать звонок
+        </button>
+      </div>
+      <div class="header__nav">
+        <div class="container container--header">
           <a href="#" class="header__nav-button">Главная</a>
           <a href="#" class="header__nav-button">Продукция</a>
           <a href="#" class="header__nav-button">Наши услуги</a>
@@ -42,24 +42,38 @@
           <a href="#" class="header__nav-button">Оплата</a>
           <a href="#" class="header__nav-button">Контакты</a>
           <a href="#" class="header__nav-button"><i class="fa fa-search" aria-hidden="true"></i></a>
-        </div>   
-      </header>
-      <div class="main__slider" id="slider">
-        <div class="main__slider-item">
-          <p class="main__slider-title">
-            Установка и доставка окон от производителя
-          </p>
-          <p class="main__slider-text">
-            Равным образом укрепление и развитие структуры играет важную роль в формир овании дальнейших направлений развития. Богатый опыт консультация с широким активом обеспечивает широкому кругу (специалистов) участие в формировании форм развития.
-          </p>
-        </div>
-        <div class="main__slider-item">
-          <p class="main__slider-title">
-            Установка и доставка окон от производителя
-          </p>
-          <p class="main__slider-text">
-            Равным образом укрепление и развитие структуры играет важную роль в формир овании дальнейших направлений развития. Богатый опыт консультация с широким активом обеспечивает широкому кругу (специалистов) участие в формировании форм развития.
-          </p>
+        </div> 
+      </div>
+    </header>
+    <div class="main__content">
+      <div class="container">
+        <div class="main__slider-wrapper">
+          <div class="main__slider" id="sliderMain">
+            <div class="main__slider-item">
+              <p class="main__slider-title">
+                Установка и доставка окон от производителя
+              </p>
+              <p class="main__slider-text">
+                Равным образом укрепление и развитие структуры играет важную роль в формир овании дальнейших направлений развития. Богатый опыт консультация с широким активом обеспечивает широкому кругу (специалистов) участие в формировании форм развития.
+              </p>
+            </div>
+            <div class="main__slider-item">
+              <p class="main__slider-title">
+                Установка и доставка окон от производителя
+              </p>
+              <p class="main__slider-text">
+                Равным образом укрепление и развитие структуры играет важную роль в формир овании дальнейших направлений развития. Богатый опыт консультация с широким активом обеспечивает широкому кругу (специалистов) участие в формировании форм развития.
+              </p>
+            </div>
+          </div>
+          <div class="main__slider-paginator">
+            <div class="main__slider-arrow main__slider-arrow--left">
+              <i class="fa fa-angle-left" aria-hidden="true"></i>
+            </div>
+            <div class="main__slider-arrow main__slider-arrow--right">
+              <i class="fa fa-angle-right" aria-hidden="true"></i>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -68,7 +82,7 @@
     <div class="container">
       <div class="order">
         <div class="order__img-wrapper">
-          <img class="image" src="./img/main-order.png" alt="order" />
+          <img class="image" src="./img/main/main-order.png" alt="order" />
         </div>
         <div class="order__instruction">
           <p class="order__title">
@@ -76,7 +90,7 @@
           </p>
           <div class="order__item">
             <div class="order__item-img">
-              <img class="image" src="./img/window.png" alt="window" />
+              <img class="image" src="./img/main/window.png" alt="window" />
             </div>
             <p class="order__item-text">
               Выберите параметры окна
@@ -85,12 +99,12 @@
               <i class="ion-ios-arrow-thin-right"></i>
             </div>
             <div class="order__item-shadow">
-              <img class="image" src="./img/shadow.png" alt="" />
+              <img class="image" src="./img/main/shadow.png" alt="" />
             </div>
           </div>
           <div class="order__item">
             <div class="order__item-img">
-              <img class="image" src="./img/truck.png" alt="truck" />
+              <img class="image" src="./img/main/truck.png" alt="truck" />
             </div>
             <p class="order__item-text">
               Выберите способ доставки
@@ -99,12 +113,12 @@
               <i class="ion-ios-arrow-thin-right"></i>
             </div>
             <div class="order__item-shadow">
-              <img class="image" src="./img/shadow.png" alt="" />
+              <img class="image" src="./img/main/shadow.png" alt="" />
             </div>
           </div>
           <div class="order__item">
             <div class="order__item-img">
-              <img class="image" src="./img/box.png" alt="box" />
+              <img class="image" src="./img/main/box.png" alt="box" />
             </div>
             <p class="order__item-text">
               Получите свой заказ
@@ -113,7 +127,7 @@
               <i class="ion-ios-arrow-thin-right"></i>
             </div>
             <div class="order__item-shadow">
-              <img class="image" src="./img/shadow.png" alt="" />
+              <img class="image" src="./img/main/shadow.png" alt="" />
             </div>
           </div>
         </div>
@@ -121,10 +135,10 @@
       <p class="video__title">
         Видео
       </p>
-      <div class="video__slider" id="slider">
+      <div class="video__slider" id="sliderVideo">
         <div class="video__slider-item">
           <div class="video__slider-img">
-            <img class="image" src="./img/video-slider-1.png" alt="" />
+            <img class="image" src="./img/main/video-slider-1.png" alt="" />
           </div>
           <button class="video__slider-play">
             <i class="fa fa-play" aria-hidden="true"></i>
@@ -138,7 +152,7 @@
         </div>
         <div class="video__slider-item">
           <div class="video__slider-img">
-            <img class="image" src="./img/video-slider-2.png" alt="" />
+            <img class="image" src="./img/main/video-slider-2.png" alt="" />
           </div>
           <button class="video__slider-play">
             <i class="fa fa-play" aria-hidden="true"></i>
@@ -152,7 +166,7 @@
         </div>
         <div class="video__slider-item">
           <div class="video__slider-img">
-            <img class="image" src="./img/video-slider-3.png" alt="" />
+            <img class="image" src="./img/main/video-slider-3.png" alt="" />
           </div>
           <button class="video__slider-play">
             <i class="fa fa-play" aria-hidden="true"></i>
@@ -166,7 +180,7 @@
         </div>
         <div class="video__slider-item">
           <div class="video__slider-img">
-            <img class="image" src="./img/video-slider-4.png" alt="" />
+            <img class="image" src="./img/main/video-slider-4.png" alt="" />
           </div>
           <button class="video__slider-play">
             <i class="fa fa-play" aria-hidden="true"></i>
@@ -200,13 +214,202 @@
       <p class="section__title">
         Каталог окон
       </p>
-      <div class="catalog__tab-nav">
-
+      <div class="catalog__nav">
+        <p class="catalog__nav-link">Глухие</p>
+        <p class="catalog__nav-link">Открывное - Откидное</p>
+        <p class="catalog__nav-link">Глухое - Открывное</p>
+        <p class="catalog__nav-link">Витраж</p>
       </div>
       <div class="catalog__tabs">
-        
+        <div class="catalog__tab">
+          <div class="catalog__tab-slider" id="sliderCatalog1">
+            <div class="catalog__slider-item">
+              <div class="catalog__slider-wrapper">
+                <div class="catalog__slider-img catalog__slider-img--main">
+                  <img class="image" src="./img/categories/cat-slide-1-main.png" alt="" />
+                </div>
+                <div class="catalog__slider-img">
+                  <img class="image" src="./img/categories/cat-slide-1.png" alt="" />
+                </div>
+                <div class="catalog__slider-img">
+                  <img class="image" src="./img/categories/cat-slide-2.png" alt="" />
+                </div>
+                <div class="catalog__slider-img">
+                  <img class="image" src="./img/categories/cat-slide-2.png" alt="" />
+                </div>
+              </div>
+              <p class="catalog__slider-title">
+                Окно Глухое
+              </p>
+              <p class="catalog__slider-price">
+                <span>от </span>5 000<span> грн</span>
+              </p>
+              <button class="button catalog__slider-button">
+                Калькулятор
+              </button>
+            </div>
+            <div class="catalog__slider-item">
+              <div class="catalog__slider-wrapper">
+                <div class="catalog__slider-img catalog__slider-img--main">
+                  <img class="image" src="./img/categories/cat-slide-1-main.png" alt="" />
+                </div>
+                <div class="catalog__slider-img">
+                  <img class="image" src="./img/categories/cat-slide-1.png" alt="" />
+                </div>
+                <div class="catalog__slider-img">
+                  <img class="image" src="./img/categories/cat-slide-2.png" alt="" />
+                </div>
+                <div class="catalog__slider-img">
+                  <img class="image" src="./img/categories/cat-slide-2.png" alt="" />
+                </div>
+              </div>
+              <p class="catalog__slider-title">
+                Окно Глухое
+              </p>
+              <p class="catalog__slider-price">
+                <span>от </span>5 000<span> грн</span>
+              </p>
+              <button class="button catalog__slider-button">
+                Калькулятор
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="catalog__tab">
+          <div class="catalog__tab-slider" id="sliderCatalog2">
+            <div class="catalog__slider-item">
+              <div class="catalog__slider-wrapper">
+                <div class="catalog__slider-img catalog__slider-img--main">
+                  <img class="image" src="./img/categories/cat-slide-1-main.png" alt="" />
+                </div>
+                <div class="catalog__slider-img">
+                  <img class="image" src="./img/categories/cat-slide-1.png" alt="" />
+                </div>
+                <div class="catalog__slider-img">
+                  <img class="image" src="./img/categories/cat-slide-2.png" alt="" />
+                </div>
+                <div class="catalog__slider-img">
+                  <img class="image" src="./img/categories/cat-slide-2.png" alt="" />
+                </div>
+              </div>
+              <p class="catalog__slider-title">
+                Окно Глухое
+              </p>
+              <p class="catalog__slider-price">
+                <span>от </span>5 000<span> грн</span>
+              </p>
+              <button class="button catalog__slider-button">
+                Калькулятор
+              </button>
+            </div>
+            <div class="catalog__slider-item">
+              <div class="catalog__slider-wrapper">
+                <div class="catalog__slider-img catalog__slider-img--main">
+                  <img class="image" src="./img/categories/cat-slide-1-main.png" alt="" />
+                </div>
+                <div class="catalog__slider-img">
+                  <img class="image" src="./img/categories/cat-slide-1.png" alt="" />
+                </div>
+                <div class="catalog__slider-img">
+                  <img class="image" src="./img/categories/cat-slide-2.png" alt="" />
+                </div>
+                <div class="catalog__slider-img">
+                  <img class="image" src="./img/categories/cat-slide-2.png" alt="" />
+                </div>
+              </div>
+              <p class="catalog__slider-title">
+                Окно Глухое
+              </p>
+              <p class="catalog__slider-price">
+                <span>от </span>5 000<span> грн</span>
+              </p>
+              <button class="button catalog__slider-button">
+                Калькулятор
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+  </section>
+  <section class="popular">
+    <div class="container">
+      <p class="section__title">
+        Популярныйй товар
+      </p>
+      <div class="popular__block popular__block--left">
+        <div class="popular__slider" id="sliderPopular"></div>
+        <div class="popular__text-wrapper">
+          <p class="popular__title">
+            Таким образом реализация намеченных плановых заданий способствует подготовки и реализации дальнейших направлений развития.
+          </p>
+          <p class="popular__text">
+            <span>
+              Образом новая модель организационной деятельности обеспечивает широкому кругу (специалистов) участие в формировании форм развития.
+            </span>
+            <span>
+              Повседневная практика показывает, что укрепление и развитие структуры играет важную роль в формировании существенных финансовых и административных условий. Разнообразный и богатый опыт постоянный количественный рост и сфера нашей активности способствует подготовки и реализации дальнейших направлений развития.
+            </span>
+          </p>
+        </div>
+      </div>
+      <div class="popular__block popular__block--right">
+        <div class="popular__block-action">
+          <div class="popular__block-label">
+            <span>Акция</span>
+          </div>
+          <p class="popular__block-title">
+            Бесплатная доставка
+          </p>
+          <div class="popular__block-img">
+            <img class="image" src="./img/popular/info.png" alt="" />
+          </div>
+        </div>
+        <div class="popular__block-price">
+          <p class="popular__block-title">
+            Цена:
+          </p>
+          <p class="catalog__slider-price">
+            <span>от </span>5 000<span> грн</span>
+          </p>
+          <button class="button">
+            Калькулятор
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="map" id="googleMap">
+    <footer class="footer">
+      <div class="fooret__title-block">
+        <div class="footer__logo">
+          <img class="image" src="./img/main/logo.png" alt="logo" />
+        </div>
+        <p class="footer__title">
+          Inside Windows
+        </p>
+      </div>
+      <div class="footer__nav-block">
+        <div class="footer__nav">
+          <a href="#" class="footer__nav-link">Главная</a>
+          <a href="#" class="footer__nav-link">Кредит</a>
+          <a href="#" class="footer__nav-link">Доставка</a>
+          <a href="#" class="footer__nav-link">Продукция</a>
+          <a href="#" class="footer__nav-link">Акции</a>
+          <a href="#" class="footer__nav-link">Оплата</a>
+          <a href="#" class="footer__nav-link">Наши услуги</a>
+          <a href="#" class="footer__nav-link">Новости</a>
+          <a href="#" class="footer__nav-link">Контакты</a>
+        </div>
+      </div>
+      <div class="footer__contact-block">
+        <p class="footer__phone">+ 38 (044) 812-23-12</p>
+        <button class="button">
+          <img class="footer__button-img" src="./img/phone-call.svg" alt="call" />
+          Заказать звонок
+        </button>
+      </div>
+    </footer>
   </section>
   
 
