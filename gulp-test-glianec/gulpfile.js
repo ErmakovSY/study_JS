@@ -97,7 +97,10 @@ gulp.task('image', () => {
 
 /* Task for Fonts */
 gulp.task('fonts', () => {
-  gulp.src('./src/fonts/**/*.*')
+  gulp.src([
+    './src/fonts/**/*.*',
+    './node_modules/ionicons/dist/fonts/*.*'
+  ])
     .pipe(newer('./build/fonts/'))
     .pipe(gulp.dest('./build/fonts/'))
     .pipe(reload({ stream: true }));
