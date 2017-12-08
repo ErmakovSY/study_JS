@@ -33,15 +33,47 @@
   &__slider-img {
     width: 100%;
     height: 242px;
+    position: relative;
+    margin-bottom: 10px;
   }
   &__slider-play {
-
+    border: none;
+    background-color: $green;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 50px;
+    width: 50px;
+    transform: translateY(50%);
+    i {
+      font-size: 22px;
+      line-height: 50px;
+      color: $white;
+    }
+    &:hover {
+      background-color: $white;
+      i {
+        color: $green;
+      }
+    }
   }
   &__slider-title {
-
+    font: 700 16px Roboto;
+    width: 100%;
+    height: 40px;
+    overflow: hidden;
+    margin-bottom: 10px;
+    padding: 0 10px 0 60px;
   }
   &__slider-text {
-
+    width: 100%;
+    font-size: 14px;
+    line-height: 1.1;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;   
+    margin-bottom: 10px;
+    padding: 0 10px 0 60px;
   }
 }
 .order {
