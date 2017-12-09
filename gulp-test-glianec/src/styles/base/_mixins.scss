@@ -71,3 +71,13 @@
     justify-content: $align-horizontal;
     align-items: $align-vertical;
 }
+
+@mixin firefox-only {
+    @at-root {
+      @-moz-document url-prefix() {
+        & {
+          @content;
+        }
+      }
+    }
+  }
