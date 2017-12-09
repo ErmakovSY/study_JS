@@ -1,5 +1,54 @@
-.slider {
-  width: 100%;
-  max-width: 960px;
-  margin: 50px auto;
+.action {
+  height: 330px;
+  background: url("./../img/action-bg.png") center no-repeat;
+  padding: 38px 0;
+  &__title {
+    color: $white;
+    margin-bottom: 30px;
+  }
+  &__description {
+    color: $white;
+    &--yellow {
+      font: 700 16px Roboto;
+      color: $yellow;
+      text-decoration: underline;
+      margin-bottom: 30px;
+    }
+  }
+  &__text {
+    color: $white;
+    margin-bottom: 10px;
+  }
+  &__countdown {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+}
+.countdown {
+  &__item {
+    height: 100px;
+    width: 86px;
+    margin-right: 20px;
+    background-color: $white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+  &__value {
+    font: 700 56px Cuprum;
+    line-height: 50px;
+    color: $green;
+    @media (max-width: 420px) {
+      font-size: 46px
+    }
+  }
+  &__description {
+    
+  }
 }

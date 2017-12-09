@@ -39,7 +39,11 @@ gulp.task('html', () => {
 
 /*Task for CSS*/
 gulp.task('css', () => {
-  gulp.src('./src/styles/main.scss')
+  gulp.src([
+    './node_modules/tooltipster/dist/css/tooltipster.bundle.min.css',
+    './src/styles/main.scss'
+  ])
+    .pipe(concat('main.scss'))
     .pipe(sourcemaps.init())
     .pipe(sass({ outputStyle: 'compressed' })
     .on('error', function (err) {
@@ -59,6 +63,8 @@ gulp.task('js', () => {
   gulp.src([
     './node_modules/jquery/dist/jquery.js',
     './node_modules/slick-carousel/slick/slick.js',
+    './node_modules/tooltipster/dist/js/tooltipster.bundle.min.js',
+    './node_modules/jquery-countdown/dist/jquery.countdown.min.js',
     './src/js/main.js'
   ])
     .pipe(concat('main.js'))
